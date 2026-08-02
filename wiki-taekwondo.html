@@ -1,0 +1,587 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wiki TKD — Examen cinturón negro</title>
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --ink: #1A2233;
+    --muted: #5B6575;
+    --blue: #0E4A9E;
+    --blue-soft: #EAF1FB;
+    --red: #C8102E;
+    --red-soft: #FBEDEF;
+    --line: #E4E7EC;
+    --card: #FFFFFF;
+    --panel: #F7F8FA;
+    --ok: #1E7A44;
+    --ok-soft: #E8F5EC;
+    --bad: #B3212E;
+    --bad-soft: #FBEAEA;
+    --warn-soft: #FFF6E5;
+    --warn: #8A5B00;
+  }
+  :root[data-theme="dark"] {
+    --paper: #101623;
+    --ink: #E9EDF5;
+    --muted: #9AA6B8;
+    --blue: #7FB0F0;
+    --blue-soft: #1A2A45;
+    --red: #F08A97;
+    --red-soft: #3A2029;
+    --line: #273349;
+    --card: #172033;
+    --panel: #141C2D;
+    --ok: #7ED2A0;
+    --ok-soft: #16301F;
+    --bad: #F09A9A;
+    --bad-soft: #3A1D1D;
+    --warn-soft: #33290F;
+    --warn: #E8C070;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    line-height: 1.6; margin: 0;
+  }
+  .kfont {
+    font-family: Herculanum, Copperplate, "Copperplate Gothic Bold", "Trebuchet MS", fantasy;
+    letter-spacing: .04em;
+  }
+  a { color: var(--blue); }
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+    outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 4px;
+  }
+  .skip {
+    position: absolute; left: -999px; top: 0; background: var(--blue); color: #fff;
+    padding: .5rem 1rem; z-index: 99; border-radius: 0 0 8px 0;
+  }
+  .skip:focus { left: 0; }
+
+  header.top {
+    border-bottom: 4px solid var(--red);
+    background: var(--card);
+    padding: 1.4rem 1.25rem 1.1rem;
+  }
+  .topwrap { max-width: 52rem; margin: 0 auto; }
+  .taegeuk { display: inline-block; width: 26px; height: 26px; vertical-align: -5px; margin-right: .4rem; }
+  h1 { margin: 0; font-size: 1.7rem; line-height: 1.2; color: var(--blue); }
+  h1 .rojo { color: var(--red); }
+  .lema { color: var(--muted); margin: .3rem 0 0; font-size: .95rem; }
+  .toolbar { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; align-items: center; }
+  .toolbar input[type="search"] {
+    flex: 1; min-width: 220px; font: inherit; color: var(--ink);
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 8px;
+    padding: .55rem .8rem;
+  }
+  .toolbar input::placeholder { color: var(--muted); }
+  button.btn {
+    font: inherit; font-weight: 600; cursor: pointer;
+    background: var(--blue); color: #fff; border: none; border-radius: 8px;
+    padding: .55rem .9rem;
+  }
+  :root[data-theme="dark"] button.btn { color: #0E1622; }
+  button.btn.ghost { background: transparent; color: var(--blue); border: 1.5px solid var(--blue); }
+  :root[data-theme="dark"] button.btn.ghost { background: transparent; color: var(--blue); }
+  #resultado-busqueda { font-size: .85rem; color: var(--muted); min-height: 1.2em; margin-top: .4rem; }
+
+  nav.toc {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--card); border-bottom: 1px solid var(--line);
+    padding: .5rem 1.25rem;
+  }
+  nav.toc ul {
+    max-width: 52rem; margin: 0 auto; padding: 0; list-style: none;
+    display: flex; gap: .3rem 1.1rem; flex-wrap: wrap; font-size: .86rem;
+  }
+  nav.toc a { text-decoration: none; font-weight: 600; }
+  nav.toc a:hover { text-decoration: underline; }
+  nav.toc a.quiz-link { color: var(--red); }
+
+  main { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1.25rem 5rem; }
+  section.tema { margin-bottom: 2.5rem; scroll-margin-top: 4.5rem; }
+  section.tema > h2 {
+    font-size: 1.45rem; color: var(--blue);
+    border-bottom: 3px solid var(--blue); padding-bottom: .25rem; margin: 0 0 .9rem;
+  }
+  section.tema > h2 .num { color: var(--red); }
+  h3 { font-size: 1.05rem; margin: 1.2rem 0 .4rem; }
+  p { max-width: 68ch; margin: .5rem 0; }
+  ul, ol { max-width: 68ch; padding-left: 1.4rem; margin: .4rem 0 .8rem; }
+  li { margin-bottom: .2rem; }
+  .clave {
+    background: var(--blue-soft); border-left: 4px solid var(--blue);
+    border-radius: 0 8px 8px 0; padding: .6rem .9rem; margin: 1rem 0; font-size: .93rem;
+  }
+  .alerta {
+    background: var(--warn-soft); border-left: 4px solid var(--warn);
+    border-radius: 0 8px 8px 0; padding: .6rem .9rem; margin: 1rem 0; font-size: .93rem;
+  }
+  .tblwrap { overflow-x: auto; margin: .6rem 0 1rem; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { text-align: left; padding: .4rem .55rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: .73rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td b { color: var(--blue); }
+
+  .logofig { margin: 1rem 0; text-align: center; }
+  .logofig img { max-width: 100%; height: auto; border-radius: 10px; }
+  .logofig figcaption { font-size: .8rem; color: var(--muted); margin-top: .35rem; }
+  .escudo-colores { display: flex; gap: .8rem; flex-wrap: wrap; margin: .8rem 0; }
+  .ecolor {
+    flex: 1; min-width: 180px; border: 1px solid var(--line); border-radius: 10px;
+    padding: .7rem .9rem; background: var(--card); font-size: .9rem;
+  }
+  .ecolor .dot { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: .45rem; vertical-align: -2px; }
+
+  /* Quiz */
+  .quiz-bloque {
+    border: 1px solid var(--line); border-radius: 12px; background: var(--panel);
+    padding: 1rem 1.1rem; margin-bottom: 1.6rem;
+  }
+  .quiz-bloque h3 { margin-top: 0; color: var(--red); }
+  .pregunta { margin: 1rem 0 1.3rem; }
+  .pregunta .qtxt { font-weight: 600; margin-bottom: .5rem; max-width: 68ch; }
+  .opciones { display: grid; gap: .4rem; }
+  .opciones button {
+    font: inherit; text-align: left; cursor: pointer;
+    background: var(--card); color: var(--ink);
+    border: 1.5px solid var(--line); border-radius: 8px; padding: .5rem .8rem;
+  }
+  .opciones button:hover:not(:disabled) { border-color: var(--blue); }
+  .opciones button:disabled { cursor: default; opacity: .85; }
+  .opciones button.correcta { background: var(--ok-soft); border-color: var(--ok); font-weight: 600; }
+  .opciones button.incorrecta { background: var(--bad-soft); border-color: var(--bad); }
+  .feedback { margin-top: .5rem; font-size: .92rem; border-radius: 8px; padding: .55rem .8rem; display: none; }
+  .feedback.ok { display: block; background: var(--ok-soft); color: var(--ok); font-weight: 600; }
+  .feedback.mal { display: block; background: var(--bad-soft); color: var(--ink); }
+  .feedback.mal b { color: var(--bad); }
+  .marcador { font-weight: 700; color: var(--blue); margin-top: .4rem; }
+  .quiz-acciones { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; margin-top: .6rem; }
+
+  footer { border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; padding: 1.2rem 1.25rem 2.5rem; }
+  footer .fwrap { max-width: 52rem; margin: 0 auto; }
+  .oculto-busqueda { display: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+</style>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <h1 class="kfont">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span>
+    </h1>
+    <p class="lema">Preparación para el examen de cinturón negro · sábado 8 de agosto · Escuela Chul Hak San</p>
+    <div class="toolbar">
+      <input type="search" id="buscar" placeholder="Buscar en la wiki… (ej.: escudo, juramento, Choong-Moo)" aria-label="Buscar en la wiki">
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Modo oscuro</button>
+    </div>
+    <div id="resultado-busqueda" role="status" aria-live="polite"></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Índice">
+  <ul>
+    <li><a href="#escuela">La escuela</a></li>
+    <li><a href="#historia">Historia</a></li>
+    <li><a href="#filosofia">Filosofía</a></li>
+    <li><a href="#secretos">Secretos</a></li>
+    <li><a href="#mociones">Mociones</a></li>
+    <li><a href="#tules">Tules</a></li>
+    <li><a class="quiz-link" href="#cuestionarios">✏️ Cuestionarios</a></li>
+  </ul>
+</nav>
+
+<main id="contenido">
+
+  <section class="tema" id="escuela">
+    <h2 class="kfont"><span class="num">1 ·</span> La escuela Chul Hak San</h2>
+    <ul>
+      <li><b>Chul Hak San</b> significa <b>«una filosofía de vida»</b>: alcanzar la maestría del taekwondo como camino de vida.</li>
+      <li>Fundada en <b>1983</b> en Buenos Aires por el maestro <b>Omar Severino</b>.</li>
+      <li>Es la escuela de TKD ITF <b>más grande de Argentina y Latinoamérica</b> (más de 22.000 practicantes).</li>
+      <li>Se basa en los <b>5 principios del Taekwon-Do</b>.</li>
+    </ul>
+    <h3>Los 3 pilares</h3>
+    <ol>
+      <li>Ser la escuela <b>más grande</b> del mundo.</li>
+      <li>Ser la <b>mejor</b> (superación continua).</li>
+      <li><b>Ayudar</b> a todos los que podamos.</li>
+    </ol>
+    <div class="clave">🏅 Frase de la escuela (está en las medallas): <b>«Formamos personas capaces de alcanzar el éxito y la felicidad».</b></div>
+    <h3>Visión y misión</h3>
+    <ul>
+      <li><b>Visión:</b> ser la organización nº 1 del mundo en la enseñanza del TKD a todas las personas, sin distinción de sexo, raza, credo, religión y cultura, mejorando la calidad de vida y elevando el potencial humano, en un espacio cordial, ético y confiable.</li>
+      <li><b>Misión:</b> facultar líderes capaces de trascender y hacer trascender a su gente; forjar un equipo de trabajo sólido y eficaz basado en la confiabilidad.</li>
+    </ul>
+    <h3 id="escudo">El escudo</h3>
+    <figure class="logofig">
+      <img src="DATA_ESCUDO" alt="Escudo de Chul Hak San: parche circular rojo con dos practicantes bordados, uno ejecutando una patada sobre el otro, sobre rayos triangulares naranjas y amarillos, con el texto Taekwon-Do Chul-Hak-San" width="220">
+      <figcaption>El escudo de la escuela Chul Hak San</figcaption>
+    </figure>
+    <p>El escudo muestra <b>dos practicantes de taekwondo</b> (uno ejecutando una patada sobre el otro) y <b>triángulos de colores</b>. Los colores tienen significado propio según el material de la escuela:</p>
+    <div class="escudo-colores">
+      <div class="ecolor"><span class="dot" style="background:#E8842B"></span><b>Naranja — Sabiduría</b><br>Distinguir el bien del mal en relación con uno mismo.</div>
+      <div class="ecolor"><span class="dot" style="background:#E8C33C"></span><b>Amarillo — Iluminación</b><br>Proyectar el conocimiento hacia otros y estar abierto a recibir la enseñanza de los maestros.</div>
+      <div class="ecolor"><span class="dot" style="background:#C8102E"></span><b>Rojo — Fuerza</b><br>La energía que emana del centro del ser y genera resultados en otros.</div>
+    </div>
+  </section>
+
+  <section class="tema" id="historia">
+    <h2 class="kfont"><span class="num">2 ·</span> Historia del Taekwon-Do</h2>
+    <h3>El fundador: General Choi Hong Hi</h3>
+    <ul>
+      <li>Nació el <b>9 de noviembre de 1918</b> en Corea (bajo ocupación japonesa).</li>
+      <li>General del ejército coreano. Creó el arte combinando el <b>taek kyon</b> coreano (arte de pierna) con el <b>karate</b> que aprendió en Japón.</li>
+      <li><b>11 de abril de 1955:</b> se adopta oficialmente el nombre <b>«Taekwon-Do»</b>: <i>Tae</i> = pie, <i>Kwon</i> = puño/mano, <i>Do</i> = camino/arte → <b>«el camino del pie y la mano»</b>.</li>
+      <li><b>1966:</b> funda la <b>ITF</b> (Federación Internacional de Taekwon-Do) en Seúl.</li>
+      <li><b>1972:</b> traslada la sede de la ITF a <b>Toronto, Canadá</b>, desde donde difunde el arte por el mundo.</li>
+      <li>Murió el <b>15 de junio de 2002</b>.</li>
+    </ul>
+    <h3>El TKD en Argentina</h3>
+    <ul>
+      <li>Llegó en <b>1967</b> con maestros coreanos enviados por el Gral. Choi (Han Chang Kim, Nam Sung Choi, Kwang Duk Chung).</li>
+      <li><b>FETRA</b> = Federación de Taekwon-Do de la República Argentina.</li>
+    </ul>
+    <div class="clave">💡 Por si preguntan: el TKD es un arte marcial coreano <b>moderno</b> (siglo XX), creado con base científica. La ITF es la federación del estilo <b>tradicional</b> del Gral. Choi.</div>
+  </section>
+
+  <section class="tema" id="filosofia">
+    <h2 class="kfont"><span class="num">3 ·</span> Filosofía y principios</h2>
+    <h3>Los 5 principios (tenets)</h3>
+    <ol>
+      <li><b>Cortesía:</b> tratar a los demás como querés que te traten.</li>
+      <li><b>Integridad:</b> hacerse responsable de los propios actos; distinguir lo correcto de lo incorrecto.</li>
+      <li><b>Perseverancia:</b> paciencia y confianza; con preparación nada es imposible.</li>
+      <li><b>Autocontrol:</b> canalizar la agresividad y encauzar esa energía positivamente.</li>
+      <li><b>Espíritu indómito:</b> defender lo que creés sin importar las circunstancias. <i>«Es un acto de cobardía no hablar en contra de la injusticia»</i> (Gral. Choi).</li>
+    </ol>
+    <h3>El juramento</h3>
+    <ol>
+      <li>Observaré los principios del Taekwon-Do.</li>
+      <li>Respetaré al instructor y a los superiores.</li>
+      <li>Nunca haré mal uso del Taekwon-Do.</li>
+      <li>Seré un campeón de la libertad y la justicia.</li>
+      <li>Ayudaré a construir un mundo más pacífico.</li>
+    </ol>
+    <h3>Símbolos</h3>
+    <ul>
+      <li><b>Dobok:</b> evoca la vestimenta típica coreana; el árbol de la espalda y los ribetes remiten a la familia real.</li>
+      <li><b>Logo ITF:</b> el mundo con los polos abiertos (apertura a todos), colores = cinturones y continentes, el puño = el TKD.</li>
+    </ul>
+    <figure class="logofig">
+      <img src="DATA_ITF" alt="Logo de la ITF: un globo terráqueo azul con un puño amarillo y caracteres coreanos, rodeado por el texto International Taekwon-Do Federation" width="180">
+      <figcaption>Logo de la Federación Internacional de Taekwon-Do (ITF)</figcaption>
+    </figure>
+  </section>
+
+  <section class="tema" id="secretos">
+    <h2 class="kfont"><span class="num">4 ·</span> Secretos de entrenamiento y postura</h2>
+    <h3>Los 9 secretos del TKD</h3>
+    <ol>
+      <li>Estudiar la <b>teoría del poder</b>.</li>
+      <li>Comprender el <b>propósito y método</b> de cada movimiento.</li>
+      <li><b>Coordinar</b> pies, manos, vista y respiración.</li>
+      <li>Elegir el <b>arma de ataque</b> apropiada para cada punto vital.</li>
+      <li>Conocer el correcto <b>ángulo y distancia</b> de ataque y defensa.</li>
+      <li>Brazos y piernas <b>levemente flexionados</b> (relajación y fluidez).</li>
+      <li>El movimiento <b>empieza con impulso hacia atrás</b> y no se detiene hasta el objetivo.</li>
+      <li>Crear <b>movimiento ondulante</b>.</li>
+      <li><b>Exhalación breve y brusca</b> en el impacto (salvo movimiento conectado).</li>
+    </ol>
+    <h3>Posición correcta</h3>
+    <ul>
+      <li>Espalda recta (salvo excepciones) · hombros relajados · abdomen tenso.</li>
+      <li>Mantener el equilibrio y el enfrentamiento correcto al adversario (total, parcial o de lado).</li>
+      <li>Usar bien la flexión de las rodillas.</li>
+    </ul>
+    <div class="clave">🌊 <b>Movimiento ondulante:</b> bajar 2 cm → subir 4 cm → bajar 2 cm. Genera velocidad: suma energía potencial + cinética.</div>
+  </section>
+
+  <section class="tema" id="mociones">
+    <h2 class="kfont"><span class="num">5 ·</span> Mociones</h2>
+    <p>Una moción es <b>cómo se ejecuta un movimiento</b>. La definen <b>4 variables</b>: velocidad del movimiento, velocidad <i>entre</i> movimientos, movimiento ondulante y respiración.</p>
+    <h3>Las 6 mociones de mano</h3>
+    <div class="tblwrap"><table>
+      <tr><th>Moción</th><th>En una línea</th></tr>
+      <tr><td><b>Normal</b></td><td>1 movimiento (ataque/defensa), lo más rápido posible, 1 respiración breve</td></tr>
+      <tr><td><b>Natural</b></td><td>1 movimiento que no es ataque ni defensa; la mano acompaña el paso</td></tr>
+      <tr><td><b>Lenta</b></td><td>1 movimiento lento (belleza, balance, musculatura), 1 exhalación larga</td></tr>
+      <tr><td><b>Rápida</b></td><td>2 movimientos encadenados acortando el tiempo entre ellos, 2 respiraciones breves</td></tr>
+      <tr><td><b>Continua</b></td><td>Varios movimientos (2, 4 o 7) sin detención; 1 inhalación y una exhalación por movimiento</td></tr>
+      <tr><td><b>Conectada</b></td><td>2 movimientos unidos en una sola onda y una sola respiración (suave → breve y potente)</td></tr>
+    </table></div>
+    <h3>En las patadas</h3>
+    <ul>
+      <li><b>Rápidas:</b> 2 patadas acortando el tiempo entre ellas.</li>
+      <li><b>Consecutivas:</b> 2 patadas distintas con el <b>mismo pie</b>, casi sin pausa.</li>
+      <li><b>Dobles / triples:</b> como las consecutivas; estacionarias o saltando.</li>
+    </ul>
+    <div class="clave">📌 Ejemplos: Rápida → <b>Do-San 15-16</b> · Continua → <b>Dan-Gun 13-14</b> · Conectada → <b>Yul-Gok 16-17</b> · Lenta → <b>Toi-Gye 3-6-12</b> · Natural → <b>Yul-Gok 1-4</b></div>
+  </section>
+
+  <section class="tema" id="tules">
+    <h2 class="kfont"><span class="num">6 ·</span> Tules: qué significa cada nombre</h2>
+    <div class="tblwrap"><table>
+      <tr><th class="num">#</th><th>Tul</th><th>Significa / homenajea</th><th class="num">Mov.</th></tr>
+      <tr><td class="num">1</td><td><b>Chon-Ji</b></td><td>«Cielo y tierra»: la creación del mundo, el inicio del practicante</td><td class="num">19</td></tr>
+      <tr><td class="num">2</td><td><b>Dan-Gun</b></td><td>Fundador legendario de Corea (2333 AC)</td><td class="num">21</td></tr>
+      <tr><td class="num">3</td><td><b>Do-San</b></td><td>Patriota Ahn Chang-Ho: educación e independencia</td><td class="num">24</td></tr>
+      <tr><td class="num">4</td><td><b>Won-Hyo</b></td><td>Monje que introdujo el budismo en Corea (686 DC)</td><td class="num">28</td></tr>
+      <tr><td class="num">5</td><td><b>Yul-Gok</b></td><td>Filósofo Yi I, el «Confucio de Corea» (38 = paralelo natal)</td><td class="num">38</td></tr>
+      <tr><td class="num">6</td><td><b>Joong-Gun</b></td><td>Patriota que asesinó a un gobernador japonés</td><td class="num">32</td></tr>
+      <tr><td class="num">7</td><td><b>Toi-Gye</b></td><td>Erudito Yi Hwang, confucionismo (37 = paralelo natal)</td><td class="num">37</td></tr>
+      <tr><td class="num">8</td><td><b>Hwa-Rang</b></td><td>Jóvenes guerreros de Silla (29 = división de infantería)</td><td class="num">29</td></tr>
+      <tr><td class="num">9</td><td><b>Choong-Moo</b></td><td>Almirante Yi Soon-Sin, barco tortuga; termina con mano izq. por su muerte injusta</td><td class="num">30</td></tr>
+    </table></div>
+    <div class="clave">💡 El 1º tul es <b>Chon-Ji</b> («cielo y tierra»); el del fundador <i>de Corea</i> es el 2º, <b>Dan-Gun</b>.</div>
+  </section>
+
+  <section class="tema" id="cuestionarios">
+    <h2 class="kfont"><span class="num">✏️</span> Cuestionarios de práctica</h2>
+    <p>Cinco preguntas por bloque. Si fallás, te muestra la respuesta correcta y el enlace a la sección de la wiki para repasar.</p>
+    <div class="quiz-acciones" style="margin-bottom:1.2rem">
+      <button class="btn" id="simulacro-btn">🎲 Simulacro: 10 preguntas al azar</button>
+    </div>
+    <div id="simulacro-zona"></div>
+    <div id="quizzes"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="fwrap">
+    Wiki armada a partir de los apuntes transcriptos (carpeta <code>transcripciones/</code>) + verificación con teoría estándar ITF y material de la escuela Chul Hak San. ¡Éxito el sábado! 🥋
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ----- Tema claro/oscuro (claro por defecto, persistente) -----
+  var btn = document.getElementById('tema-btn');
+  var root = document.documentElement;
+  function aplicar(t) {
+    if (t === 'dark') { root.dataset.theme = 'dark'; btn.textContent = '☀️ Modo claro'; btn.setAttribute('aria-pressed', 'true'); }
+    else { root.dataset.theme = 'light'; btn.textContent = '🌙 Modo oscuro'; btn.setAttribute('aria-pressed', 'false'); }
+  }
+  var guardado = null;
+  try { guardado = localStorage.getItem('wiki-tema'); } catch (e) {}
+  aplicar(guardado === 'dark' ? 'dark' : (root.dataset.theme === 'dark' ? 'dark' : 'light'));
+  btn.addEventListener('click', function () {
+    var nuevo = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    aplicar(nuevo);
+    try { localStorage.setItem('wiki-tema', nuevo); } catch (e) {}
+  });
+
+  // ----- Buscador -----
+  var buscar = document.getElementById('buscar');
+  var resultado = document.getElementById('resultado-busqueda');
+  var secciones = Array.prototype.slice.call(document.querySelectorAll('section.tema'));
+  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+  buscar.addEventListener('input', function () {
+    var t = norm(buscar.value.trim());
+    if (!t) {
+      secciones.forEach(function (s) { s.classList.remove('oculto-busqueda'); });
+      resultado.textContent = '';
+      return;
+    }
+    var n = 0;
+    secciones.forEach(function (s) {
+      var hit = norm(s.textContent).indexOf(t) !== -1;
+      s.classList.toggle('oculto-busqueda', !hit);
+      if (hit) n++;
+    });
+    resultado.textContent = n === 0 ? 'Sin resultados — probá con otra palabra.' : n + ' sección(es) contienen «' + buscar.value.trim() + '»';
+  });
+
+  // ----- Datos de los cuestionarios -----
+  // Cada pregunta: q, opts (4), a (índice correcto), link, linktxt
+  var QUIZ = [
+    { id: 'escuela', titulo: 'La escuela Chul Hak San', link: '#escuela', linktxt: 'La escuela', preguntas: [
+      { q: '¿Qué significa «Chul Hak San»?', opts: ['Camino del guerrero', 'Una filosofía de vida', 'Montaña del conocimiento', 'Espíritu indómito'], a: 1 },
+      { q: '¿Quién fundó la escuela y en qué año?', opts: ['Gral. Choi, 1966', 'Enrique Eiriz, 1972', 'Omar Severino, 1983', 'Pablo Trajtenberg, 1988'], a: 2 },
+      { q: 'En el escudo, el color naranja representa…', opts: ['La fuerza', 'La iluminación', 'La sabiduría', 'La perseverancia'], a: 2 },
+      { q: '¿Qué color del escudo representa la fuerza (la energía que emana del centro del ser)?', opts: ['Rojo', 'Amarillo', 'Naranja', 'Azul'], a: 0 },
+      { q: '¿Cuáles son los 3 pilares de la escuela?', opts: ['Fuerza, velocidad y técnica', 'Ser la más grande, ser la mejor y ayudar a todos los que podamos', 'Cortesía, integridad y perseverancia', 'Enseñar, competir y trascender'], a: 1 }
+    ]},
+    { id: 'historia', titulo: 'Historia del Taekwon-Do', link: '#historia', linktxt: 'Historia', preguntas: [
+      { q: '¿Quién creó el Taekwon-Do?', opts: ['El almirante Yi Soon-Sin', 'El general Choi Hong Hi', 'El maestro Omar Severino', 'El rey Se-Jong'], a: 1 },
+      { q: '¿Qué significa «Taekwon-Do»?', opts: ['El arte de la patada voladora', 'El camino del guerrero', 'El camino del pie y la mano', 'La filosofía del combate'], a: 2 },
+      { q: '¿Cuándo se adoptó oficialmente el nombre «Taekwon-Do»?', opts: ['9 de noviembre de 1918', '11 de abril de 1955', '22 de marzo de 1966', '15 de junio de 2002'], a: 1 },
+      { q: 'En 1972, la sede de la ITF se trasladó a…', opts: ['Seúl, Corea', 'Viena, Austria', 'Toronto, Canadá', 'Buenos Aires, Argentina'], a: 2 },
+      { q: '¿Cuándo murió el general Choi?', opts: ['El 15 de junio de 2002', 'El 12 de enero de 2010', 'El 11 de abril de 1995', 'El 9 de noviembre de 1998'], a: 0 }
+    ]},
+    { id: 'filosofia', titulo: 'Filosofía y principios', link: '#filosofia', linktxt: 'Filosofía', preguntas: [
+      { q: '¿Cuál de estos NO es uno de los 5 principios del Taekwon-Do?', opts: ['Cortesía', 'Integridad', 'Humildad', 'Autocontrol'], a: 2 },
+      { q: '«Es un acto de cobardía no hablar en contra de la injusticia» se relaciona con…', opts: ['La perseverancia', 'El espíritu indómito', 'La cortesía', 'El autocontrol'], a: 1 },
+      { q: 'Completá el juramento: «Nunca haré ___ del Taekwon-Do».', opts: ['abuso', 'mal uso', 'demostración', 'negocio'], a: 1 },
+      { q: 'En el logo de la ITF, que el mundo esté abierto en los polos simboliza…', opts: ['La división de Corea', 'La apertura del Taekwon-Do a todo el mundo', 'El movimiento ondulante', 'Los 24 tules'], a: 1 },
+      { q: 'En el dobok, el árbol de la espalda y los ribetes representan…', opts: ['Los cinturones', 'La familia real coreana', 'El monte Baekdu', 'La paz mundial'], a: 1 }
+    ]},
+    { id: 'secretos', titulo: 'Secretos de entrenamiento y postura', link: '#secretos', linktxt: 'Secretos', preguntas: [
+      { q: '¿Cuántos son los secretos de entrenamiento del TKD?', opts: ['5', '7', '9', '12'], a: 2 },
+      { q: 'El movimiento ondulante consiste en…', opts: ['Subir 4 cm y bajar 4 cm', 'Bajar 2 cm, subir 4 cm y bajar 2 cm', 'Bajar 4 cm, subir 2 cm y bajar 4 cm', 'Mantener la altura constante'], a: 1 },
+      { q: 'Durante la acción, los brazos y las piernas deben estar…', opts: ['Completamente extendidos', 'Rígidos y tensos', 'Levemente flexionados', 'Totalmente relajados'], a: 2 },
+      { q: 'La exhalación en el momento del impacto debe ser…', opts: ['Larga y profunda', 'Breve y brusca (salvo movimiento conectado)', 'Silenciosa y continua', 'Antes del impacto'], a: 1 },
+      { q: 'En la posición correcta, el abdomen debe estar…', opts: ['Relajado', 'Tenso', 'Contraído solo al patear', 'Inclinado hacia adelante'], a: 1 }
+    ]},
+    { id: 'mociones', titulo: 'Mociones', link: '#mociones', linktxt: 'Mociones', preguntas: [
+      { q: '¿Cuántas variables definen una moción?', opts: ['2', '3', '4', '6'], a: 2 },
+      { q: 'La moción conectada se caracteriza por…', opts: ['Dos movimientos con dos respiraciones', 'Dos movimientos unidos en una sola onda y una sola respiración', 'Un movimiento lento con exhalación larga', 'Varios movimientos con pausas'], a: 1 },
+      { q: 'La moción continua puede abarcar…', opts: ['Solo 2 movimientos', '2, 4 o 7 movimientos', '3, 5 o 9 movimientos', 'Cualquier cantidad par'], a: 1 },
+      { q: 'Las patadas consecutivas son…', opts: ['2 patadas con pies distintos', '2 patadas distintas con el mismo pie, casi sin pausa', 'Una patada repetida saltando', 'Patadas al mismo tiempo que un golpe de puño'], a: 1 },
+      { q: 'Los movimientos 16-17 de Yul-Gok son el ejemplo clásico de la moción…', opts: ['Rápida', 'Continua', 'Conectada', 'Lenta'], a: 2 }
+    ]},
+    { id: 'tules', titulo: 'Tules y sus significados', link: '#tules', linktxt: 'Tules', preguntas: [
+      { q: '¿Qué significa «Chon-Ji»?', opts: ['Fundador de Corea', 'Cielo y tierra', 'Filosofía de vida', 'El primer paso'], a: 1 },
+      { q: '¿Qué tul homenajea al fundador legendario de Corea (2333 AC)?', opts: ['Chon-Ji', 'Do-San', 'Dan-Gun', 'Won-Hyo'], a: 2 },
+      { q: 'Choong-Moo termina con una técnica de mano izquierda porque…', opts: ['El almirante era zurdo', 'Simboliza su muerte sin poder demostrar todo su potencial', 'Representa la derrota de Japón', 'Es la única técnica que faltaba'], a: 1 },
+      { q: '¿Qué hizo el patriota que da nombre al tul Joong-Gun?', opts: ['Creó el alfabeto coreano', 'Asesinó a un gobernador japonés', 'Unificó Corea', 'Introdujo el budismo'], a: 1 },
+      { q: '¿Qué tul homenajea al monje que introdujo el budismo en Corea?', opts: ['Do-San', 'Toi-Gye', 'Won-Hyo', 'Hwa-Rang'], a: 2 }
+    ]}
+  ];
+
+  // ----- Motor de quiz -----
+  function crearPregunta(p, quiz, idx, onResultado) {
+    var cont = document.createElement('div');
+    cont.className = 'pregunta';
+    var qt = document.createElement('p');
+    qt.className = 'qtxt';
+    qt.textContent = (idx + 1) + '. ' + p.q;
+    cont.appendChild(qt);
+    var ops = document.createElement('div');
+    ops.className = 'opciones';
+    ops.setAttribute('role', 'group');
+    ops.setAttribute('aria-label', 'Opciones de la pregunta ' + (idx + 1));
+    var fb = document.createElement('div');
+    fb.className = 'feedback';
+    fb.setAttribute('aria-live', 'polite');
+    var respondida = false;
+    p.opts.forEach(function (texto, i) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = String.fromCharCode(65 + i) + ') ' + texto;
+      b.addEventListener('click', function () {
+        if (respondida) return;
+        respondida = true;
+        var correcta = i === p.a;
+        var botones = ops.querySelectorAll('button');
+        botones.forEach(function (x, j) {
+          x.disabled = true;
+          if (j === p.a) x.classList.add('correcta');
+        });
+        if (correcta) {
+          fb.className = 'feedback ok';
+          fb.textContent = '✓ ¡Correcto!';
+        } else {
+          b.classList.add('incorrecta');
+          fb.className = 'feedback mal';
+          fb.innerHTML = '✗ Incorrecta. La respuesta correcta es: <b>' + p.opts[p.a] + '</b>. ' +
+            'Repasá acá → <a href="' + quiz.link + '">' + quiz.linktxt + '</a>';
+        }
+        onResultado(correcta);
+      });
+      ops.appendChild(b);
+    });
+    cont.appendChild(ops);
+    cont.appendChild(fb);
+    return cont;
+  }
+
+  function renderQuiz(quiz, destino, tituloExtra) {
+    var caja = document.createElement('div');
+    caja.className = 'quiz-bloque';
+    caja.id = 'quiz-' + quiz.id + (tituloExtra ? '-sim' : '');
+    var h = document.createElement('h3');
+    h.textContent = (tituloExtra || '') + quiz.titulo;
+    caja.appendChild(h);
+    var correctas = 0, contestadas = 0;
+    var marcador = document.createElement('p');
+    marcador.className = 'marcador';
+    marcador.setAttribute('aria-live', 'polite');
+    function actualizar() {
+      marcador.textContent = 'Resultado: ' + correctas + ' / ' + quiz.preguntas.length +
+        (contestadas === quiz.preguntas.length
+          ? (correctas === quiz.preguntas.length ? ' — ¡Perfecto! 🥇' : (correctas >= 4 ? ' — ¡Muy bien! 💪' : ' — Repasá la sección y volvé a intentar.'))
+          : ' (respondidas: ' + contestadas + ')');
+    }
+    quiz.preguntas.forEach(function (p, i) {
+      caja.appendChild(crearPregunta(p, quiz, i, function (ok) {
+        contestadas++; if (ok) correctas++;
+        actualizar();
+      }));
+    });
+    actualizar();
+    caja.appendChild(marcador);
+    var acciones = document.createElement('div');
+    acciones.className = 'quiz-acciones';
+    var re = document.createElement('button');
+    re.type = 'button';
+    re.className = 'btn ghost';
+    re.textContent = '↻ Reintentar este bloque';
+    re.addEventListener('click', function () {
+      var nueva = renderQuiz(quiz, null, tituloExtra);
+      caja.replaceWith(nueva);
+    });
+    acciones.appendChild(re);
+    caja.appendChild(acciones);
+    if (destino) destino.appendChild(caja);
+    return caja;
+  }
+
+  var zona = document.getElementById('quizzes');
+  QUIZ.forEach(function (q) { renderQuiz(q, zona); });
+
+  // ----- Simulacro: 10 preguntas al azar -----
+  document.getElementById('simulacro-btn').addEventListener('click', function () {
+    var pool = [];
+    QUIZ.forEach(function (q) {
+      q.preguntas.forEach(function (p) { pool.push({ p: p, link: q.link, linktxt: q.linktxt }); });
+    });
+    for (var i = pool.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = pool[i]; pool[i] = pool[j]; pool[j] = tmp;
+    }
+    var elegidas = pool.slice(0, 10);
+    var sim = {
+      id: 'simulacro',
+      titulo: 'Simulacro (10 preguntas mezcladas)',
+      link: '#contenido', linktxt: 'la wiki',
+      preguntas: elegidas.map(function (x) { return x.p; })
+    };
+    // Para que cada pregunta linkee a su propia sección:
+    var zonaSim = document.getElementById('simulacro-zona');
+    zonaSim.innerHTML = '';
+    var caja = document.createElement('div');
+    caja.className = 'quiz-bloque';
+    var h = document.createElement('h3');
+    h.textContent = '🎲 ' + sim.titulo;
+    caja.appendChild(h);
+    var correctas = 0, contestadas = 0;
+    var marcador = document.createElement('p');
+    marcador.className = 'marcador';
+    marcador.setAttribute('aria-live', 'polite');
+    function actualizar() {
+      marcador.textContent = 'Resultado: ' + correctas + ' / 10' +
+        (contestadas === 10 ? (correctas >= 9 ? ' — ¡Listo para el examen! 🥋' : correctas >= 7 ? ' — ¡Bien! Un repaso más y sale.' : ' — Repasá las secciones enlazadas.') : ' (respondidas: ' + contestadas + ')');
+    }
+    elegidas.forEach(function (x, i) {
+      caja.appendChild(crearPregunta(x.p, { link: x.link, linktxt: x.linktxt }, i, function (ok) {
+        contestadas++; if (ok) correctas++;
+        actualizar();
+      }));
+    });
+    actualizar();
+    caja.appendChild(marcador);
+    zonaSim.appendChild(caja);
+    caja.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>

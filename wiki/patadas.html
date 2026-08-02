@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Las patadas — Wiki de Teoría TKD ITF</title>
+<meta name="description" content="Las patadas más comunes del Taekwon-Do ITF: nombre en español, nombre coreano y video explicativo de cada una.">
+<link rel="stylesheet" href="assets/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
+<style>
+  .patada {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .9rem;
+    box-shadow: var(--sombra); scroll-margin-top: 5.5rem;
+  }
+  .patada-cab { display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap; margin-bottom: .35rem; }
+  .patada-cab .kor {
+    font-size: 1.12rem; font-weight: 700; color: var(--blue);
+    font-family: Georgia, "Times New Roman", serif; letter-spacing: .01em;
+  }
+  .patada-cab .esp { font-size: .98rem; color: var(--ink); }
+  .patada-cab .esp::before { content: "· "; color: var(--muted); }
+  .patada p.desc { margin: .35rem 0 .6rem; font-size: .93rem; }
+  .patada .pie-p {
+    display: flex; align-items: center; gap: .7rem; flex-wrap: wrap;
+    border-top: 1px solid var(--line); padding-top: .6rem; font-size: .85rem;
+  }
+  .arma { color: var(--muted); }
+  .arma b { color: var(--ink); font-weight: 600; }
+  a.video {
+    display: inline-flex; align-items: center; gap: .4rem;
+    text-decoration: none; font-weight: 600; font-size: .85rem;
+    background: var(--red-soft); color: var(--red);
+    border: 1.5px solid var(--red); border-radius: 8px;
+    padding: .3rem .7rem; margin-left: auto;
+    transition: background .15s ease, transform .12s ease;
+  }
+  a.video:hover { background: var(--red); color: #fff; transform: translateY(-1px); }
+  :root[data-theme="dark"] a.video:hover { color: #101623; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <a class="marca kfont" href="index.html">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      <span>Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span></span>
+    </a>
+    <div class="top-acciones">
+      <button class="btn ghost menu-btn" id="menu-btn" aria-expanded="false" aria-controls="lateral">☰ Temas</button>
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="lateral" id="lateral" aria-label="Menú de temas">
+    <h2>Estudio</h2>
+    <ul>
+      <li><a href="index.html"><span class="ico" aria-hidden="true">🏠</span> Inicio</a></li>
+      <li><a href="escuela.html"><span class="ico" aria-hidden="true">🛡️</span> La escuela</a></li>
+      <li><a href="historia.html"><span class="ico" aria-hidden="true">📜</span> Historia</a></li>
+      <li><a href="filosofia.html"><span class="ico" aria-hidden="true">☯️</span> Filosofía</a></li>
+      <li><a href="secretos.html"><span class="ico" aria-hidden="true">🔑</span> Secretos</a></li>
+      <li><a href="mociones.html"><span class="ico" aria-hidden="true">🌊</span> Mociones</a></li>
+      <li><a href="tules.html"><span class="ico" aria-hidden="true">🥋</span> Tules</a></li>
+      <li><a href="patadas.html"><span class="ico" aria-hidden="true">🦵</span> Patadas</a></li>
+    </ul>
+    <h2>Práctica</h2>
+    <ul>
+      <li><a href="cuestionarios.html"><span class="ico" aria-hidden="true">✏️</span> Cuestionarios</a></li>
+    </ul>
+  </aside>
+
+  <main id="contenido">
+
+    <p class="migas"><a href="index.html">Inicio</a> › Las patadas</p>
+    <h1 class="titulo kfont">Las patadas</h1>
+    <p class="bajada">Las más comunes, con su nombre en coreano y un video que explica la técnica. La terminología es la de <strong>ITF</strong>, que no siempre coincide con la de WTF/Kukkiwon.</p>
+
+    <div class="clave aparece">
+      🗝️ <strong>Chagi</strong> es la palabra genérica para «patada» en coreano, y es la que aparece al final del nombre de casi todas.
+    </div>
+
+    <section class="bloque aparece" id="tabla">
+      <h2 class="seccion kfont">Tabla rápida</h2>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Coreano (ITF)</th><th>Español</th><th>Arma / zona de golpe</th></tr></thead>
+          <tbody>
+            <tr><td><b>Ap Cha Busigi</b></td><td>Patada frontal</td><td>Empeine o planta</td></tr>
+            <tr><td><b>Yop Chagi</b></td><td>Patada lateral</td><td>Canto del pie</td></tr>
+            <tr><td><b>Dollyo Chagi</b></td><td>Patada circular</td><td>Empeine o base de los dedos</td></tr>
+            <tr><td><b>Bandae Dollyo Chagi</b></td><td>Patada circular inversa</td><td>Talón o planta</td></tr>
+            <tr><td><b>Furyo</b></td><td>Patada descendente («de hacha»)</td><td>Talón</td></tr>
+            <tr><td><b>Dwit Cha Jirugi</b></td><td>Patada hacia atrás</td><td>Talón</td></tr>
+            <tr><td><b>Twio Dollyo</b></td><td>Patada doble: empeine y luego talón</td><td>Empeine, después talón o planta</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bloque aparece" id="una-por-una">
+      <h2 class="seccion kfont">Una por una, con video</h2>
+      <p>Los videos abren en YouTube en una pestaña nueva.</p>
+
+      <article class="patada" id="ap-cha-busigi">
+        <div class="patada-cab"><span class="kor">Ap Cha Busigi</span><span class="esp">Patada frontal</span></div>
+        <p class="desc">La patada más básica. La rodilla sube al pecho y la pierna se extiende hacia adelante en latigazo, volviendo por el mismo camino. Es la primera que se aprende y aparece desde Chon-Ji.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>empeine</b> o la <b>planta del pie</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=E2AlDdOr6EA" target="_blank" rel="noopener">▶ Ver video</a>
+        </div>
+      </article>
+
+      <article class="patada" id="yop-chagi">
+        <div class="patada-cab"><span class="kor">Yop Chagi</span><span class="esp">Patada lateral</span></div>
+        <p class="desc">De costado, con el canto del pie, empujando a través del blanco. No rebota: atraviesa. Es una de las técnicas más características del Taekwon-Do ITF.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>canto del pie</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=faebzA7FmHE" target="_blank" rel="noopener">▶ Ver video ITF</a>
+        </div>
+      </article>
+
+      <article class="patada" id="dollyo-chagi">
+        <div class="patada-cab"><span class="kor">Dollyo Chagi</span><span class="esp">Patada circular</span></div>
+        <p class="desc">La pierna no va en línea recta: se levanta la rodilla y el pie describe un <strong>círculo</strong> hacia el blanco, girando la cadera. Aparece en Hwa-Rang y en muchos tules posteriores.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>empeine</b> o la <b>base de los dedos</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=Mmh5SZMhgow" target="_blank" rel="noopener">▶ Ver video</a>
+        </div>
+      </article>
+
+      <article class="patada" id="bandae-dollyo-chagi">
+        <div class="patada-cab"><span class="kor">Bandae Dollyo Chagi</span><span class="esp">Patada circular inversa</span></div>
+        <p class="desc">La circular al revés: el cuerpo gira sobre su eje dando la espalda y la pierna barre en sentido contrario a la dollyo. Es de las más potentes y de las más difíciles de dominar.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>talón</b> o la <b>planta</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=ZQKbIJfdDYU" target="_blank" rel="noopener">▶ Ver video ITF</a>
+        </div>
+      </article>
+
+      <article class="patada" id="furyo">
+        <div class="patada-cab"><span class="kor">Furyo</span><span class="esp">Patada descendente o «de hacha»</span></div>
+        <p class="desc">La pierna sube lo más alto posible y <strong>cae desde arriba</strong> sobre el blanco, como un hachazo. Requiere mucha elongación.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>talón</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=oTcOa5JhzEg" target="_blank" rel="noopener">▶ Ver video</a>
+        </div>
+      </article>
+
+      <article class="patada" id="dwit-cha-jirugi">
+        <div class="patada-cab"><span class="kor">Dwit Cha Jirugi</span><span class="esp">Patada hacia atrás</span></div>
+        <p class="desc">Se lanza <strong>hacia atrás</strong> en línea recta, mirando por encima del hombro para ubicar el blanco. Como la lateral, es penetrante: empuja con el talón.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>talón</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=vgYUimCZKLk" target="_blank" rel="noopener">▶ Ver video</a>
+        </div>
+      </article>
+
+      <article class="patada" id="twio-dollyo">
+        <div class="patada-cab"><span class="kor">Twio Dollyo</span><span class="esp">Patada doble: empeine y luego talón</span></div>
+        <p class="desc">Se golpea primero con el <strong>empeine</strong> y, <strong>sin apoyar el pie</strong>, se vuelve a golpear con el <strong>talón o la planta</strong> en el movimiento de retorno. Son dos impactos con la misma pierna, encadenados en el aire.</p>
+        <div class="pie-p">
+          <span class="arma">Golpea con el <b>empeine</b> y después con el <b>talón o la planta</b></span>
+          <a class="video" href="https://www.youtube.com/watch?v=UAF4HjJO2uU" target="_blank" rel="noopener">▶ Ver video</a>
+        </div>
+      </article>
+    </section>
+
+    <nav class="nav-pares" aria-label="Navegación entre páginas">
+      <a href="tules.html">← Los tules</a>
+      <a href="cuestionarios.html">Cuestionarios →</a>
+    </nav>
+
+  </main>
+</div>
+
+<footer class="pie">
+  <div class="fwrap">Wiki de teoría TKD ITF · <a href="cuestionarios.html">Practicar con los cuestionarios</a></div>
+</footer>
+
+<script src="assets/wiki.js"></script>
+</body>
+</html>

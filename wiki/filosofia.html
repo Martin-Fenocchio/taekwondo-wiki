@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filosofía y principios — Wiki de Teoría TKD ITF</title>
+<meta name="description" content="Los 5 principios del Taekwon-Do explicados, el juramento y los símbolos: el dobok y el logo de la ITF.">
+<link rel="stylesheet" href="assets/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
+<style>
+  .principio {
+    display: flex; gap: .9rem; align-items: flex-start;
+    background: var(--card); border: 1px solid var(--line);
+    border-left: 4px solid var(--red); border-radius: 0 12px 12px 0;
+    padding: .9rem 1.1rem; margin-bottom: .8rem; box-shadow: var(--sombra);
+  }
+  .principio .np {
+    flex-shrink: 0; width: 2.1rem; height: 2.1rem; border-radius: 50%;
+    background: var(--red); color: #fff; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; font-size: .95rem;
+  }
+  :root[data-theme="dark"] .principio .np { color: #0E1622; }
+  .principio h3 { margin: 0 0 .15rem; font-size: 1.05rem; color: var(--red); }
+  .principio p { margin: 0; }
+  .principio .kor { font-size: .8rem; color: var(--muted); font-weight: 400; }
+  .juramento { counter-reset: jur; list-style: none; padding: 0; max-width: 60ch; }
+  .juramento li {
+    counter-increment: jur; position: relative;
+    padding: .55rem .8rem .55rem 2.8rem; margin-bottom: .4rem;
+    background: var(--blue-soft); border-radius: 8px; font-weight: 500;
+  }
+  .juramento li::before {
+    content: counter(jur); position: absolute; left: .8rem; top: .55rem;
+    font-weight: 700; color: var(--blue);
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <a class="marca kfont" href="index.html">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      <span>Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span></span>
+    </a>
+    <div class="top-acciones">
+      <button class="btn ghost menu-btn" id="menu-btn" aria-expanded="false" aria-controls="lateral">☰ Temas</button>
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="lateral" id="lateral" aria-label="Menú de temas">
+    <h2>Estudio</h2>
+    <ul>
+      <li><a href="index.html"><span class="ico" aria-hidden="true">🏠</span> Inicio</a></li>
+      <li><a href="escuela.html"><span class="ico" aria-hidden="true">🛡️</span> La escuela</a></li>
+      <li><a href="historia.html"><span class="ico" aria-hidden="true">📜</span> Historia</a></li>
+      <li><a href="filosofia.html"><span class="ico" aria-hidden="true">☯️</span> Filosofía</a></li>
+      <li><a href="secretos.html"><span class="ico" aria-hidden="true">🔑</span> Secretos</a></li>
+      <li><a href="mociones.html"><span class="ico" aria-hidden="true">🌊</span> Mociones</a></li>
+      <li><a href="tules.html"><span class="ico" aria-hidden="true">🥋</span> Tules</a></li>
+      <li><a href="patadas.html"><span class="ico" aria-hidden="true">🦵</span> Patadas</a></li>
+    </ul>
+    <h2>Práctica</h2>
+    <ul>
+      <li><a href="cuestionarios.html"><span class="ico" aria-hidden="true">✏️</span> Cuestionarios</a></li>
+    </ul>
+  </aside>
+
+  <main id="contenido">
+
+    <p class="migas"><a href="index.html">Inicio</a> › Filosofía</p>
+    <h1 class="titulo kfont">Filosofía y principios</h1>
+    <p class="bajada">Los 5 principios y el juramento son de lo más preguntado en cualquier examen. Conviene poder recitarlos en orden y explicar cada uno con una frase propia.</p>
+
+    <section class="bloque aparece" id="principios">
+      <h2 class="seccion kfont">Los 5 principios (tenets)</h2>
+      <p>Son la base moral del Taekwon-Do. El General Choi los formuló para que el arte no fuera solo técnica de combate, sino formación de la persona.</p>
+
+      <div class="principio">
+        <span class="np" aria-hidden="true">1</span>
+        <div>
+          <h3>Cortesía <span class="kor">· Ye Ui</span></h3>
+          <p>Tratar a los demás como a uno le gustaría que lo traten: con respeto y educación. Se manifiesta en el saludo, en el trato al instructor y a los compañeros.</p>
+        </div>
+      </div>
+
+      <div class="principio">
+        <span class="np" aria-hidden="true">2</span>
+        <div>
+          <h3>Integridad <span class="kor">· Yom Chi</span></h3>
+          <p>La capacidad de ser <strong>responsable de los actos propios</strong> y de distinguir lo correcto de lo incorrecto. No es solo honestidad con otros: es no engañarse a uno mismo.</p>
+        </div>
+      </div>
+
+      <div class="principio">
+        <span class="np" aria-hidden="true">3</span>
+        <div>
+          <h3>Perseverancia <span class="kor">· In Nae</span></h3>
+          <p>La capacidad de <strong>volver al principio</strong>, tener paciencia y confianza, y saber que con suficiente intención y preparación nada es imposible: ningún obstáculo es demasiado grande.</p>
+        </div>
+      </div>
+
+      <div class="principio">
+        <span class="np" aria-hidden="true">4</span>
+        <div>
+          <h3>Autocontrol <span class="kor">· Guk Gi</span></h3>
+          <p>Canaliza la agresividad y nos enseña a <strong>encauzar esa energía de manera positiva</strong>. Es lo que hace que un practicante con capacidad de dañar elija no hacerlo.</p>
+        </div>
+      </div>
+
+      <div class="principio">
+        <span class="np" aria-hidden="true">5</span>
+        <div>
+          <h3>Espíritu indómito <span class="kor">· Baekjul Boolgool</span></h3>
+          <p>Tener el <strong>valor de defender aquello en lo que se cree</strong>, sin importar las circunstancias ni quién esté enfrente.</p>
+        </div>
+      </div>
+
+      <div class="dato">💬 Cita del General Choi que suele acompañar a este principio: <strong>«Es un acto de cobardía no hablar en contra de la injusticia».</strong></div>
+      <div class="clave">🧠 <strong>Para memorizar el orden:</strong> <strong>C-I-P-A-E</strong> → <em>Cortesía, Integridad, Perseverancia, Autocontrol, Espíritu indómito</em>.</div>
+    </section>
+
+    <section class="bloque aparece" id="juramento">
+      <h2 class="seccion kfont">El juramento del Taekwon-Do</h2>
+      <p>Son <strong>5 puntos</strong>, y todos empiezan en primera persona del futuro. No hay que confundirlos con los principios: los principios son <em>valores</em>, el juramento es un <em>compromiso</em> que el practicante asume.</p>
+      <ol class="juramento">
+        <li>Observaré los principios del Taekwon-Do.</li>
+        <li>Respetaré al instructor y a los superiores.</li>
+        <li>Nunca haré mal uso del Taekwon-Do.</li>
+        <li>Seré un campeón de la libertad y la justicia.</li>
+        <li>Ayudaré a construir un mundo más pacífico.</li>
+      </ol>
+      <div class="clave">💡 <strong>Diferencia clave:</strong> si te preguntan «¿cuáles son los principios?» respondés cortesía, integridad, perseverancia, autocontrol y espíritu indómito. Si te preguntan «¿cuál es el juramento?» respondés estos 5 compromisos. El punto 1 del juramento justamente enlaza con los principios.</div>
+    </section>
+
+    <section class="bloque aparece" id="simbolos">
+      <h2 class="seccion kfont">Los símbolos</h2>
+
+      <h3>El dobok (el uniforme)</h3>
+      <ul>
+        <li>Representa la <strong>vestimenta típica coreana</strong>.</li>
+        <li>El <strong>dibujo del árbol</strong> en la espalda y los <strong>ribetes</strong> son el símbolo de la <strong>familia real</strong>.</li>
+      </ul>
+
+      <h3>El logo de la ITF</h3>
+      <figure class="fig">
+        <img src="assets/img/logo-itf.png" alt="Logo de la ITF: globo terráqueo azul con líneas de latitud y longitud, un puño amarillo en el centro junto a caracteres coreanos, dentro de un anillo negro con el texto «International Taekwon-Do Federation»" width="190" loading="lazy">
+        <figcaption>Logo de la Federación Internacional de Taekwon-Do</figcaption>
+      </figure>
+      <ul>
+        <li>Representa al <strong>mundo</strong>, con los <strong>polos abiertos</strong>: la apertura del Taekwon-Do a todo el planeta.</li>
+        <li>Los <strong>colores</strong> representan a los <strong>cinturones</strong> y a los <strong>continentes</strong>.</li>
+        <li>Está simbolizado con un <strong>puño</strong>.</li>
+      </ul>
+      <p>El escudo de nuestra escuela es otro símbolo distinto, con su propio significado: <a href="escuela.html#escudo">ver el escudo de Chul Hak San →</a></p>
+    </section>
+
+    <nav class="nav-pares" aria-label="Navegación entre páginas">
+      <a href="historia.html">← Historia</a>
+      <a href="secretos.html">Secretos de entrenamiento →</a>
+    </nav>
+
+  </main>
+</div>
+
+<footer class="pie">
+  <div class="fwrap">Wiki de teoría TKD ITF · <a href="cuestionarios.html">Practicar con los cuestionarios</a></div>
+</footer>
+
+<script src="assets/wiki.js"></script>
+</body>
+</html>

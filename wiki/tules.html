@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los tules — Wiki de Teoría TKD ITF</title>
+<meta name="description" content="Significado, historia y cantidad de movimientos de los tules de Taekwon-Do ITF, de Chon-Ji a Choong-Moo.">
+<link rel="stylesheet" href="assets/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
+<style>
+  /* --- Tarjeta con el color del cinturón correspondiente --- */
+  .tul {
+    background: var(--c-fondo, var(--card));
+    border: 1px solid var(--line);
+    border-right: 14px solid var(--c-punta, var(--line));
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 1rem;
+    box-shadow: var(--sombra); scroll-margin-top: 5.5rem;
+  }
+  /* Colores de cada cinturón: fondo suave (legible) + punta a full color */
+  .tul[data-cinto="blanco"]        { --c-fondo: #FFFFFF; --c-punta: #E8C33C; }
+  .tul[data-cinto="amarillo"]      { --c-fondo: #FDF6DA; --c-punta: #E8C33C; }
+  .tul[data-cinto="amarillo-verde"]{ --c-fondo: #FDF6DA; --c-punta: #3E8E52; }
+  .tul[data-cinto="verde"]         { --c-fondo: #E9F6EC; --c-punta: #3E8E52; }
+  .tul[data-cinto="verde-azul"]    { --c-fondo: #E9F6EC; --c-punta: #2B62A8; }
+  .tul[data-cinto="azul"]          { --c-fondo: #E8F0FB; --c-punta: #2B62A8; }
+  .tul[data-cinto="azul-rojo"]     { --c-fondo: #E8F0FB; --c-punta: #C8102E; }
+  .tul[data-cinto="rojo"]          { --c-fondo: #FBEAEC; --c-punta: #C8102E; }
+  .tul[data-cinto="rojo-negro"]    { --c-fondo: #FBEAEC; --c-punta: #17171A; }
+
+  :root[data-theme="dark"] .tul[data-cinto="blanco"]         { --c-fondo: #1E2431; }
+  :root[data-theme="dark"] .tul[data-cinto="amarillo"],
+  :root[data-theme="dark"] .tul[data-cinto="amarillo-verde"] { --c-fondo: #2C2614; }
+  :root[data-theme="dark"] .tul[data-cinto="verde"],
+  :root[data-theme="dark"] .tul[data-cinto="verde-azul"]     { --c-fondo: #14291B; }
+  :root[data-theme="dark"] .tul[data-cinto="azul"],
+  :root[data-theme="dark"] .tul[data-cinto="azul-rojo"]      { --c-fondo: #15243C; }
+  :root[data-theme="dark"] .tul[data-cinto="rojo"],
+  :root[data-theme="dark"] .tul[data-cinto="rojo-negro"]     { --c-fondo: #31191E; }
+  :root[data-theme="dark"] .tul[data-cinto="rojo-negro"]     { --c-punta: #4A505E; }
+
+  .cinto-nombre {
+    display: inline-block; font-size: .72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    background: rgba(0,0,0,.07); border-radius: 20px;
+    padding: .15rem .6rem; margin-top: .5rem;
+  }
+  :root[data-theme="dark"] .cinto-nombre { background: rgba(255,255,255,.1); }
+  .tul-cab { display: flex; align-items: flex-start; gap: .9rem; flex-wrap: wrap; }
+  .tul-orden {
+    flex-shrink: 0; width: 2.4rem; height: 2.4rem; border-radius: 50%;
+    background: var(--red); color: #fff; font-weight: 700; font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  :root[data-theme="dark"] .tul-orden { color: #0E1622; }
+  .tul-cab h3 { margin: 0; font-size: 1.2rem; color: var(--blue); }
+  .tul-cab .movs {
+    margin-left: auto; font-size: .82rem; font-weight: 700;
+    background: var(--blue-soft); color: var(--blue);
+    padding: .2rem .65rem; border-radius: 20px; white-space: nowrap;
+  }
+  .tul .resumen { font-weight: 600; margin: .5rem 0 .3rem; }
+  .tul .porque {
+    font-size: .88rem; color: var(--muted);
+    border-top: 1px solid var(--line); margin-top: .7rem; padding-top: .55rem;
+  }
+  .tul .porque b { color: var(--red); }
+  .diag {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 2rem; height: 2rem; border: 1.5px solid var(--line); border-radius: 6px;
+    font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem;
+    color: var(--ink); background: var(--panel); margin-left: .4rem;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <a class="marca kfont" href="index.html">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      <span>Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span></span>
+    </a>
+    <div class="top-acciones">
+      <button class="btn ghost menu-btn" id="menu-btn" aria-expanded="false" aria-controls="lateral">☰ Temas</button>
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="lateral" id="lateral" aria-label="Menú de temas">
+    <h2>Estudio</h2>
+    <ul>
+      <li><a href="index.html"><span class="ico" aria-hidden="true">🏠</span> Inicio</a></li>
+      <li><a href="escuela.html"><span class="ico" aria-hidden="true">🛡️</span> La escuela</a></li>
+      <li><a href="historia.html"><span class="ico" aria-hidden="true">📜</span> Historia</a></li>
+      <li><a href="filosofia.html"><span class="ico" aria-hidden="true">☯️</span> Filosofía</a></li>
+      <li><a href="secretos.html"><span class="ico" aria-hidden="true">🔑</span> Secretos</a></li>
+      <li><a href="mociones.html"><span class="ico" aria-hidden="true">🌊</span> Mociones</a></li>
+      <li><a href="tules.html"><span class="ico" aria-hidden="true">🥋</span> Tules</a></li>
+      <li><a href="patadas.html"><span class="ico" aria-hidden="true">🦵</span> Patadas</a></li>
+    </ul>
+    <h2>Práctica</h2>
+    <ul>
+      <li><a href="cuestionarios.html"><span class="ico" aria-hidden="true">✏️</span> Cuestionarios</a></li>
+    </ul>
+  </aside>
+
+  <main id="contenido">
+
+    <p class="migas"><a href="index.html">Inicio</a> › Los tules</p>
+    <h1 class="titulo kfont">Los tules</h1>
+    <p class="bajada">Qué significa el nombre de cada forma y por qué tiene esa cantidad de movimientos. No hace falta el paso a paso: lo que se pregunta es el significado.</p>
+
+    <section class="bloque aparece" id="que-simbolizan">
+      <h2 class="seccion kfont">Qué simboliza un tul</h2>
+      <p>En cada tul hay <strong>tres cosas que significan algo</strong>, y conviene tenerlas separadas en la cabeza:</p>
+      <div class="grilla tres">
+        <div class="ficha"><h4>El nombre</h4><p>Casi siempre es un <strong>personaje heroico</strong> de la historia de Corea, o un hecho histórico importante.</p></div>
+        <div class="ficha"><h4>La cantidad de movimientos</h4><p>Nunca es al azar: alude a la <strong>edad</strong> del personaje, al <strong>paralelo</strong> donde nació, a un <strong>año</strong> o a un dato de su vida.</p></div>
+        <div class="ficha"><h4>El diagrama</h4><p>La <strong>figura que dibujan los pasos</strong> en el piso. A veces es un carácter chino con significado propio.</p></div>
+      </div>
+      <div class="clave">🧠 <strong>La pregunta típica de examen</strong> no es «hacé el tul», sino <em>«¿qué significa Choong-Moo?»</em> o <em>«¿por qué Joong-Gun tiene 32 movimientos?»</em>. Con el nombre y el porqué del número ya respondés bien.</div>
+    </section>
+
+    <section class="bloque aparece" id="tabla">
+      <h2 class="seccion kfont">Tabla resumen</h2>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th class="num">#</th><th>Tul</th><th>Significa / homenajea</th><th class="num">Mov.</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td><b><a href="#chon-ji">Chon-Ji</a></b></td><td>Cielo y tierra: la creación del mundo</td><td class="num">19</td></tr>
+            <tr><td class="num">2</td><td><b><a href="#dan-gun">Dan-Gun</a></b></td><td>Fundador legendario de Corea (2333 AC)</td><td class="num">21</td></tr>
+            <tr><td class="num">3</td><td><b><a href="#do-san">Do-San</a></b></td><td>Patriota Ahn Chang-Ho: educación e independencia</td><td class="num">24</td></tr>
+            <tr><td class="num">4</td><td><b><a href="#won-hyo">Won-Hyo</a></b></td><td>Monje que introdujo el budismo en Corea</td><td class="num">28</td></tr>
+            <tr><td class="num">5</td><td><b><a href="#yul-gok">Yul-Gok</a></b></td><td>Filósofo Yi I, el «Confucio de Corea»</td><td class="num">38</td></tr>
+            <tr><td class="num">6</td><td><b><a href="#joong-gun">Joong-Gun</a></b></td><td>Patriota que asesinó a un gobernador japonés</td><td class="num">32</td></tr>
+            <tr><td class="num">7</td><td><b><a href="#toi-gye">Toi-Gye</a></b></td><td>Erudito Yi Hwang, autoridad del confucionismo</td><td class="num">37</td></tr>
+            <tr><td class="num">8</td><td><b><a href="#hwa-rang">Hwa-Rang</a></b></td><td>Jóvenes guerreros de la dinastía Silla</td><td class="num">29</td></tr>
+            <tr><td class="num">9</td><td><b><a href="#choong-moo">Choong-Moo</a></b></td><td>Almirante Yi Soon-Sin, el barco tortuga</td><td class="num">30</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="bloque aparece" id="uno-por-uno">
+      <h2 class="seccion kfont">Uno por uno</h2>
+
+      <article class="tul" data-cinto="blanco" id="chon-ji">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">1</span>
+          <h3>Chon-Ji <span class="diag" title="Diagrama del tul" aria-label="Diagrama: cruz">✛</span></h3>
+          <span class="movs">19 movimientos</span>
+        </div>
+        <p class="resumen">Literalmente significa <strong>«cielo y tierra»</strong>.</p>
+        <p>En Oriente se interpreta como <strong>la creación del mundo</strong> o el comienzo de la historia. Por eso es el <strong>tul inicial</strong> del practicante: el punto donde empieza todo.</p>
+        <p class="porque"><b>La estructura:</b> la forma tiene <strong>2 partes similares</strong> — una representa el <strong>cielo</strong> y la otra la <strong>tierra</strong>.</p>
+              <span class="cinto-nombre">Cinturón blanco punta amarilla</span>
+      </article>
+
+      <article class="tul" data-cinto="amarillo" id="dan-gun">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">2</span>
+          <h3>Dan-Gun <span class="diag" aria-label="Diagrama: forma de I">Ⅰ</span></h3>
+          <span class="movs">21 movimientos</span>
+        </div>
+        <p class="resumen">Lleva el nombre del <strong>santo Dan-Gun, fundador legendario de Corea</strong>.</p>
+        <p>Según la leyenda, fundó Corea en el año <strong>2333 antes de Cristo</strong>.</p>
+        <p class="porque"><b>Ojo:</b> es el tul del fundador <em>de Corea</em>, no del Taekwon-Do. El fundador del Taekwon-Do es el <a href="historia.html#fundador">Gral. Choi</a>, que no tiene tul propio.</p>
+              <span class="cinto-nombre">Cinturón amarillo</span>
+      </article>
+
+      <article class="tul" data-cinto="amarillo-verde" id="do-san">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">3</span>
+          <h3>Do-San <span class="diag" aria-label="Diagrama: forma de I">Ⅰ</span></h3>
+          <span class="movs">24 movimientos</span>
+        </div>
+        <p class="resumen">Es el <strong>seudónimo del patriota Ahn Chang-Ho</strong> (1876-1938).</p>
+        <p>Dedicó su vida al <strong>desarrollo de la educación en Corea</strong> y al <strong>movimiento de independencia</strong>.</p>
+        <p class="porque"><b>Por qué 24:</b> los 24 movimientos representan <strong>toda su vida</strong>, que dedicó por completo a esa causa.</p>
+              <span class="cinto-nombre">Cinturón amarillo punta verde</span>
+      </article>
+
+      <article class="tul" data-cinto="verde" id="won-hyo">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">4</span>
+          <h3>Won-Hyo <span class="diag" aria-label="Diagrama: forma de I">Ⅰ</span></h3>
+          <span class="movs">28 movimientos</span>
+        </div>
+        <p class="resumen">Fue el <strong>monje célebre que introdujo el budismo</strong> en Corea.</p>
+        <p>Lo hizo en la <strong>dinastía Silla</strong>, en el año <strong>686</strong>.</p>
+              <span class="cinto-nombre">Cinturón verde</span>
+      </article>
+
+      <article class="tul" data-cinto="verde-azul" id="yul-gok">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">5</span>
+          <h3>Yul-Gok <span class="diag" aria-label="Diagrama: carácter erudito">士</span></h3>
+          <span class="movs">38 movimientos</span>
+        </div>
+        <p class="resumen">Seudónimo del <strong>gran filósofo y erudito Yi I</strong>, llamado el <strong>«Confucio de Corea»</strong>.</p>
+        <p class="porque"><b>Por qué 38:</b> se refiere al <strong>paralelo 38</strong>, donde nació. <b>El diagrama</b> es el carácter 士, que significa <strong>«erudito»</strong>.</p>
+              <span class="cinto-nombre">Cinturón verde punta azul</span>
+      </article>
+
+      <article class="tul" data-cinto="azul" id="joong-gun">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">6</span>
+          <h3>Joong-Gun <span class="diag" aria-label="Diagrama: forma de I">Ⅰ</span></h3>
+          <span class="movs">32 movimientos</span>
+        </div>
+        <p class="resumen">Lleva el nombre del <strong>patriota Ahn Joong-Gun, que asesinó a un gobernador japonés</strong>.</p>
+        <p>La víctima fue <strong>Hiro Bumi (Ito Hirobumi)</strong>, el encargado de la anexión de Corea a Japón.</p>
+        <p class="porque"><b>Por qué 32:</b> es la <strong>edad que tenía Ahn Joong-Gun al morir</strong>, ejecutado en la prisión de Lui-Shung en 1910.</p>
+              <span class="cinto-nombre">Cinturón azul</span>
+      </article>
+
+      <article class="tul" data-cinto="azul-rojo" id="toi-gye">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">7</span>
+          <h3>Toi-Gye <span class="diag" aria-label="Diagrama: carácter erudito">士</span></h3>
+          <span class="movs">37 movimientos</span>
+        </div>
+        <p class="resumen">Es el sobrenombre del <strong>erudito Yi Hwang</strong> (siglo XVI), <strong>autoridad en el confucionismo</strong>.</p>
+        <p class="porque"><b>Por qué 37:</b> el <strong>paralelo 37</strong>, donde nació. <b>El diagrama</b> es 士, «erudito», igual que Yul-Gok.</p>
+              <span class="cinto-nombre">Cinturón azul punta roja</span>
+      </article>
+
+      <article class="tul" data-cinto="rojo" id="hwa-rang">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">8</span>
+          <h3>Hwa-Rang <span class="diag" aria-label="Diagrama: forma de I">Ⅰ</span></h3>
+          <span class="movs">29 movimientos</span>
+        </div>
+        <p class="resumen">Es el nombre de un <strong>grupo de jóvenes guerreros</strong> originario de la <strong>dinastía Silla</strong>, a principios del siglo VII.</p>
+        <p class="porque"><b>Por qué 29:</b> se refiere a la <strong>29ª división de infantería</strong>, donde el Taekwon-Do <strong>se desarrolló y maduró</strong>.</p>
+              <span class="cinto-nombre">Cinturón rojo</span>
+      </article>
+
+      <article class="tul" data-cinto="rojo-negro" id="choong-moo">
+        <div class="tul-cab">
+          <span class="tul-orden" aria-hidden="true">9</span>
+          <h3>Choong-Moo <span class="diag" aria-label="Diagrama: forma de I">Ⅰ</span></h3>
+          <span class="movs">30 movimientos</span>
+        </div>
+        <p class="resumen">Es el nombre dado al <strong>gran almirante Yi Soon-Sin</strong>, de la dinastía Lee.</p>
+        <p>Tuvo gran notoriedad por haber construido el <strong>primer barco de guerra acorazado (1592)</strong>, el <em>Kobukson</em> o «barco tortuga», considerado el <strong>precursor de los submarinos modernos</strong>.</p>
+        <p class="porque"><b>El detalle más preguntado:</b> el tul <strong>termina con un ataque de mano izquierda</strong>, y eso simboliza <strong>su muerte lamentable, sin haber tenido la oportunidad de demostrar todo su potencial</strong>, a causa de la forzada restricción que le impuso su lealtad al rey.</p>
+              <span class="cinto-nombre">Cinturón rojo punta negra</span>
+      </article>
+    </section>
+
+    <nav class="nav-pares" aria-label="Navegación entre páginas">
+      <a href="mociones.html">← Mociones</a>
+      <a href="patadas.html">Las patadas →</a>
+    </nav>
+
+  </main>
+</div>
+
+<footer class="pie">
+  <div class="fwrap">Wiki de teoría TKD ITF · <a href="cuestionarios.html">Practicar con los cuestionarios</a></div>
+</footer>
+
+<script src="assets/wiki.js"></script>
+</body>
+</html>

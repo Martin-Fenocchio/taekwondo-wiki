@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mociones — Wiki de Teoría TKD ITF</title>
+<meta name="description" content="Las mociones del Taekwon-Do ITF: normal, natural, lenta, rápida, continua y conectada; mociones de patada y ejemplos por forma.">
+<link rel="stylesheet" href="assets/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
+<style>
+  .mocion {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: .9rem;
+    box-shadow: var(--sombra);
+  }
+  .mocion h3 { margin: 0 0 .4rem; color: var(--blue); display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .etiqueta {
+    font-size: .7rem; text-transform: uppercase; letter-spacing: .06em;
+    background: var(--blue-soft); color: var(--blue);
+    padding: .12rem .5rem; border-radius: 20px; font-weight: 700;
+  }
+  .mocion p { margin: .3rem 0; }
+  .mocion .ficha-datos {
+    display: flex; gap: 1.2rem; flex-wrap: wrap;
+    margin-top: .6rem; padding-top: .6rem; border-top: 1px solid var(--line);
+    font-size: .86rem; color: var(--muted);
+  }
+  .mocion .ficha-datos b { color: var(--ink); }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <a class="marca kfont" href="index.html">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      <span>Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span></span>
+    </a>
+    <div class="top-acciones">
+      <button class="btn ghost menu-btn" id="menu-btn" aria-expanded="false" aria-controls="lateral">☰ Temas</button>
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="lateral" id="lateral" aria-label="Menú de temas">
+    <h2>Estudio</h2>
+    <ul>
+      <li><a href="index.html"><span class="ico" aria-hidden="true">🏠</span> Inicio</a></li>
+      <li><a href="escuela.html"><span class="ico" aria-hidden="true">🛡️</span> La escuela</a></li>
+      <li><a href="historia.html"><span class="ico" aria-hidden="true">📜</span> Historia</a></li>
+      <li><a href="filosofia.html"><span class="ico" aria-hidden="true">☯️</span> Filosofía</a></li>
+      <li><a href="secretos.html"><span class="ico" aria-hidden="true">🔑</span> Secretos</a></li>
+      <li><a href="mociones.html"><span class="ico" aria-hidden="true">🌊</span> Mociones</a></li>
+      <li><a href="tules.html"><span class="ico" aria-hidden="true">🥋</span> Tules</a></li>
+      <li><a href="patadas.html"><span class="ico" aria-hidden="true">🦵</span> Patadas</a></li>
+    </ul>
+    <h2>Práctica</h2>
+    <ul>
+      <li><a href="cuestionarios.html"><span class="ico" aria-hidden="true">✏️</span> Cuestionarios</a></li>
+    </ul>
+  </aside>
+
+  <main id="contenido">
+
+    <p class="migas"><a href="index.html">Inicio</a> › Mociones</p>
+    <h1 class="titulo kfont">Mociones</h1>
+    <p class="bajada">La moción es <strong>cómo</strong> se ejecuta un movimiento: no qué técnica hacés, sino con qué velocidad, con qué respiración y cómo se enlaza con el movimiento siguiente.</p>
+
+    <section class="bloque aparece" id="variables">
+      <h2 class="seccion kfont">Las 4 variables</h2>
+      <p>Toda moción queda definida por la combinación de estas cuatro cosas. Si te preguntan «¿qué define una moción?», la respuesta son estas cuatro:</p>
+      <div class="grilla dos">
+        <div class="ficha"><h4><span class="n">1</span>Velocidad del movimiento</h4><p>Qué tan rápido se ejecuta la técnica en sí.</p></div>
+        <div class="ficha"><h4><span class="n">2</span>Velocidad entre movimientos</h4><p>Cuánto tiempo pasa entre una técnica y la siguiente.</p></div>
+        <div class="ficha"><h4><span class="n">3</span>Movimiento ondulante</h4><p>Si la onda es completa, parcial o si se omite la bajada inicial. <a href="secretos.html#ondulante">Ver el diagrama →</a></p></div>
+        <div class="ficha"><h4><span class="n">4</span>Respiración</h4><p>Cuántas exhalaciones hay, y si son breves, largas o continuas.</p></div>
+      </div>
+    </section>
+
+    <section class="bloque aparece" id="tabla">
+      <h2 class="seccion kfont">Tabla comparativa (mociones de mano)</h2>
+      <div class="tblwrap">
+        <table>
+          <thead>
+            <tr><th>Moción</th><th class="num">Mov.</th><th>Velocidad</th><th>Mov. ondulante</th><th>Respiración</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><b>Normal</b></td><td class="num">1</td><td>Rápida</td><td>Normal</td><td>1 breve</td></tr>
+            <tr><td><b>Natural</b></td><td class="num">1</td><td>Según la técnica</td><td>Normal</td><td>1 algo más larga</td></tr>
+            <tr><td><b>Lenta</b></td><td class="num">1</td><td>Lenta</td><td>Normal, lento</td><td>1 exhalación larga</td></tr>
+            <tr><td><b>Rápida</b></td><td class="num">2</td><td>Aumenta entre mov.</td><td>1º completo, 2º sin bajar</td><td>2 breves</td></tr>
+            <tr><td><b>Continua</b></td><td class="num">2, 4 o 7</td><td>Continua, sin detención</td><td>1º completo, resto sin bajada inicial</td><td>1 inhalación + 1 exhalación por movimiento</td></tr>
+            <tr><td><b>Conectada</b></td><td class="num">2</td><td>Conectada</td><td>1 sola onda para los dos</td><td>1 sola: suave y termina potente</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="clave">🧠 <strong>La forma rápida de distinguirlas:</strong> mirá <strong>cuántos movimientos</strong> abarca y <strong>cuántas respiraciones</strong> tiene. Normal, natural y lenta son de <strong>1 movimiento</strong>. Rápida y conectada son de <strong>2</strong>. La continua es la única que puede abarcar <strong>varios</strong> (2, 4 o 7).</div>
+    </section>
+
+    <section class="bloque aparece" id="definiciones">
+      <h2 class="seccion kfont">Las 6 mociones, una por una</h2>
+
+      <div class="mocion">
+        <h3>Normal <span class="etiqueta">1 movimiento</span></h3>
+        <p>Un único movimiento que <strong>generalmente es un ataque o una defensa</strong>, donde el tiempo de ejecución debe ser <strong>lo más rápido posible</strong>. El movimiento ondulante es el normal (bajar-subir-bajar).</p>
+        <div class="ficha-datos"><span><b>Respiración:</b> una sola, breve</span><span><b>Es la moción por defecto</b></span></div>
+      </div>
+
+      <div class="mocion">
+        <h3>Natural <span class="etiqueta">1 movimiento</span></h3>
+        <p>Un único movimiento que <strong>no es ataque ni defensa</strong> (por ejemplo, llevar las manos a una posición). Por eso la velocidad y la fuerza dependen de la técnica en sí. La <strong>velocidad de la mano coincide con el avance de los pies</strong>.</p>
+        <div class="ficha-datos"><span><b>Respiración:</b> una, un poco más larga que la normal</span><span><b>Ejemplo:</b> Yul-Gok 1-4</span></div>
+      </div>
+
+      <div class="mocion">
+        <h3>Lenta <span class="etiqueta">1 movimiento</span></h3>
+        <p>Un único movimiento (normal o natural) que se ejecuta <strong>lentamente a propósito</strong>. Sirve para tres cosas: <strong>acentuar la belleza</strong> del movimiento, <strong>practicar el balance</strong> y <strong>fortalecer la musculatura</strong>.</p>
+        <div class="ficha-datos"><span><b>Respiración:</b> una sola exhalación larga que acompaña todo el movimiento</span><span><b>Ejemplo:</b> Toi-Gye 3, 6 y 12</span></div>
+      </div>
+
+      <div class="mocion">
+        <h3>Rápida <span class="etiqueta">2 movimientos</span></h3>
+        <p>Dos movimientos <strong>encadenados</strong>, con el objetivo de <strong>aumentar la velocidad entre ellos sin apurarlos individualmente</strong>. El primero lleva el movimiento ondulante normal; al minimizar el tiempo intermedio, la segunda técnica <strong>carece del movimiento hacia abajo</strong>.</p>
+        <div class="ficha-datos"><span><b>Respiración:</b> 2 breves</span><span><b>Sin avanzar</b></span><span><b>Ejemplo:</b> Do-San 15-16</span></div>
+      </div>
+
+      <div class="mocion">
+        <h3>Continua <span class="etiqueta">2, 4 o 7 movimientos</span></h3>
+        <p>Más de un movimiento realizados <strong>en forma continua, sin detención</strong>. Su objetivo principal es <strong>destacar la belleza y la estética</strong> del movimiento. Cuando son más de dos, el primero lleva el ondulante normal y los siguientes <strong>carecen de la bajada inicial</strong>.</p>
+        <div class="ficha-datos"><span><b>Respiración:</b> 1 inhalación y tantas exhalaciones como movimientos</span><span><b>Siempre sin avanzar</b></span><span><b>Ejemplo:</b> Dan-Gun 13-14</span></div>
+      </div>
+
+      <div class="mocion">
+        <h3>Conectada <span class="etiqueta">2 movimientos</span></h3>
+        <p>Dos movimientos —<strong>uno natural y otro normal</strong>— que se realizan <strong>unidos en una sola onda</strong>, sin detención entre ellos. Es la típica combinación de defensa + ataque que se siente como un solo gesto.</p>
+        <div class="ficha-datos"><span><b>Respiración:</b> una sola, empieza suave y termina breve y potente en el último</span><span><b>Ejemplo:</b> Yul-Gok 16-17</span></div>
+      </div>
+
+      <h3>Caso especial: dos técnicas avanzando (1 paso)</h3>
+      <p>Son dos movimientos que se realizan en <strong>2 pasos sucesivos</strong>: movimiento ondulante normal en el primero y <strong>sin bajar</strong> en el segundo, intentando acelerar el tiempo intermedio <strong>sin dañar la posición básica</strong> de cada paso. Tendrá <strong>2 respiraciones</strong> (una por técnica) más una larga natural.</p>
+    </section>
+
+    <section class="bloque aparece" id="patadas">
+      <h2 class="seccion kfont">Mociones en las patadas</h2>
+      <div class="grilla tres">
+        <div class="ficha">
+          <h4>Rápidas</h4>
+          <p>Secuencia de <strong>2 patadas</strong> donde se intenta <strong>acortar el tiempo</strong> entre patada y patada.</p>
+          <p style="font-size:.85rem;color:var(--muted)">Ej.: Hwa-Rang, patadas circulares.</p>
+        </div>
+        <div class="ficha">
+          <h4>Consecutivas</h4>
+          <p>Secuencia de <strong>2 patadas distintas con el mismo pie</strong>, con un intermedio muy breve que no corta la continuidad.</p>
+          <p style="font-size:.85rem;color:var(--muted)">1 respiración por movimiento; ondulante normal al terminar.</p>
+        </div>
+        <div class="ficha">
+          <h4>Dobles y triples</h4>
+          <p>Iguales que las consecutivas, pero de más patadas. Pueden ser <strong>estacionarias o saltando</strong>.</p>
+        </div>
+      </div>
+      <div class="clave">💡 <strong>La diferencia clave entre rápidas y consecutivas:</strong> las <strong>consecutivas</strong> se hacen con el <strong>mismo pie</strong>. Ese es el detalle que suelen preguntar.</div>
+      <p><strong>Desplazamientos:</strong> pueden ser <strong>largos</strong> o <strong>cortos</strong>.</p>
+    </section>
+
+    <section class="bloque aparece" id="ejemplos">
+      <h2 class="seccion kfont">Ejemplos por forma</h2>
+      <p>Sirven para responder «dame un ejemplo de tal moción». Vale la pena memorizar al menos dos o tres:</p>
+      <div class="tblwrap">
+        <table>
+          <thead><tr><th>Moción</th><th>Forma</th><th>Movimientos</th></tr></thead>
+          <tbody>
+            <tr><td><b>Rápida</b></td><td>Do-San</td><td>15-16</td></tr>
+            <tr><td><b>Continua</b></td><td>Dan-Gun</td><td>13-14</td></tr>
+            <tr><td><b>Conectada</b></td><td>Yul-Gok</td><td>16-17</td></tr>
+            <tr><td><b>Lenta</b></td><td>Toi-Gye</td><td>3, 6 y 12</td></tr>
+            <tr><td><b>Natural</b></td><td>Yul-Gok</td><td>1-4</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <nav class="nav-pares" aria-label="Navegación entre páginas">
+      <a href="secretos.html">← Secretos</a>
+      <a href="tules.html">Los tules →</a>
+    </nav>
+
+  </main>
+</div>
+
+<footer class="pie">
+  <div class="fwrap">Wiki de teoría TKD ITF · <a href="cuestionarios.html">Practicar con los cuestionarios</a></div>
+</footer>
+
+<script src="assets/wiki.js"></script>
+</body>
+</html>

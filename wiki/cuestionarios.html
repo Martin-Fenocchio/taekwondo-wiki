@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cuestionarios — Wiki de Teoría TKD ITF</title>
+<meta name="description" content="Preguntas de práctica y simulacro sobre la teoría de Taekwon-Do ITF.">
+<link rel="stylesheet" href="assets/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
+<style>
+  .quiz-bloque {
+    border: 1px solid var(--line); border-radius: 12px;
+    background: var(--panel); padding: 1.1rem 1.2rem; margin-bottom: 1.8rem;
+    scroll-margin-top: 5.5rem;
+  }
+  .quiz-titulo {
+    margin: 0 0 .3rem; font-size: 1.15rem; color: var(--red);
+    font-family: Herculanum, Copperplate, "Trebuchet MS", fantasy; letter-spacing: .03em;
+  }
+  .pregunta { margin: 1.1rem 0 1.4rem; }
+  .pregunta .qtxt { font-weight: 600; margin: 0 0 .55rem; max-width: 68ch; }
+  .opciones { display: grid; gap: .4rem; max-width: 60ch; }
+  .opciones button {
+    font: inherit; text-align: left; cursor: pointer;
+    background: var(--card); color: var(--ink);
+    border: 1.5px solid var(--line); border-radius: 8px; padding: .55rem .85rem;
+    transition: border-color .15s ease, background .15s ease, transform .1s ease;
+  }
+  .opciones button:hover:not(:disabled) { border-color: var(--blue); background: var(--blue-soft); }
+  .opciones button:active:not(:disabled) { transform: scale(.995); }
+  .opciones button:disabled { cursor: default; }
+  .opciones button.correcta {
+    background: var(--ok-soft); border-color: var(--ok);
+    color: var(--ink); font-weight: 700;
+  }
+  .opciones button.incorrecta { background: var(--bad-soft); border-color: var(--bad); color: var(--ink); }
+  .feedback {
+    margin-top: .55rem; font-size: .93rem; border-radius: 8px;
+    padding: .55rem .85rem; display: none; max-width: 60ch;
+  }
+  .feedback.ok { display: block; background: var(--ok-soft); color: var(--ok); font-weight: 600; }
+  .feedback.mal { display: block; background: var(--bad-soft); color: var(--ink); }
+  .feedback.mal b { color: var(--bad); }
+  .feedback a { font-weight: 600; }
+  .barra {
+    height: 6px; background: var(--line); border-radius: 4px;
+    overflow: hidden; margin: .8rem 0 .5rem; max-width: 60ch;
+  }
+  .barra span { display: block; height: 100%; width: 0; background: var(--blue); transition: width .35s ease; }
+  .marcador { font-weight: 700; color: var(--blue); margin: 0 0 .7rem; font-variant-numeric: tabular-nums; }
+  .quiz-acciones { display: flex; gap: .55rem; flex-wrap: wrap; }
+  .quiz-acciones .btn { font-size: .88rem; }
+  #zona-simulacro:empty { display: none; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <a class="marca kfont" href="index.html">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      <span>Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span></span>
+    </a>
+    <div class="top-acciones">
+      <button class="btn ghost menu-btn" id="menu-btn" aria-expanded="false" aria-controls="lateral">☰ Temas</button>
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="lateral" id="lateral" aria-label="Menú de temas">
+    <h2>Estudio</h2>
+    <ul>
+      <li><a href="index.html"><span class="ico" aria-hidden="true">🏠</span> Inicio</a></li>
+      <li><a href="escuela.html"><span class="ico" aria-hidden="true">🛡️</span> La escuela</a></li>
+      <li><a href="historia.html"><span class="ico" aria-hidden="true">📜</span> Historia</a></li>
+      <li><a href="filosofia.html"><span class="ico" aria-hidden="true">☯️</span> Filosofía</a></li>
+      <li><a href="secretos.html"><span class="ico" aria-hidden="true">🔑</span> Secretos</a></li>
+      <li><a href="mociones.html"><span class="ico" aria-hidden="true">🌊</span> Mociones</a></li>
+      <li><a href="tules.html"><span class="ico" aria-hidden="true">🥋</span> Tules</a></li>
+      <li><a href="patadas.html"><span class="ico" aria-hidden="true">🦵</span> Patadas</a></li>
+    </ul>
+    <h2>Práctica</h2>
+    <ul>
+      <li><a href="cuestionarios.html"><span class="ico" aria-hidden="true">✏️</span> Cuestionarios</a></li>
+    </ul>
+  </aside>
+
+  <main id="contenido">
+
+    <p class="migas"><a href="index.html">Inicio</a> › Cuestionarios</p>
+    <h1 class="titulo kfont">Cuestionarios</h1>
+    <p class="bajada">36 preguntas divididas en 7 bloques. Si errás, te muestra la respuesta correcta y el enlace directo a la sección donde repasarlo.</p>
+
+    <section class="bloque aparece" id="simulacro">
+      <div class="dato">
+        🎲 <strong>Simulacro de examen:</strong> 10 preguntas al azar de todos los bloques, mezclando todos los temas. Sirve para medirte de verdad.
+      </div>
+      <button class="btn" id="simulacro-btn">🎲 Empezar simulacro</button>
+      <div id="zona-simulacro" style="margin-top:1.4rem"></div>
+    </section>
+
+    <div id="bloques"></div>
+
+    <nav class="nav-pares" aria-label="Navegación entre páginas">
+      <a href="patadas.html">← Las patadas</a>
+      <a href="index.html">Volver al inicio →</a>
+    </nav>
+
+  </main>
+</div>
+
+<footer class="pie">
+  <div class="fwrap">Wiki de teoría TKD ITF · <a href="index.html">Volver al inicio</a></div>
+</footer>
+
+<script src="assets/wiki.js"></script>
+<script src="assets/quiz.js"></script>
+</body>
+</html>

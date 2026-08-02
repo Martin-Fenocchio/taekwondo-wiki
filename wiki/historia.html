@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Historia del Taekwon-Do — Wiki de Teoría TKD ITF</title>
+<meta name="description" content="Historia del Taekwon-Do: el General Choi Hong Hi, la fundación del arte, la ITF y la llegada a la Argentina.">
+<link rel="stylesheet" href="assets/estilo.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
+<style>
+  /* Línea de tiempo (solo en esta página) */
+  .linea { list-style: none; padding: 0; margin: 1.2rem 0; max-width: 46rem; }
+  .linea li {
+    position: relative; padding: 0 0 1.3rem 3.2rem; margin: 0;
+    border-left: 2px solid var(--line); margin-left: 4.2rem;
+  }
+  .linea li:last-child { border-left-color: transparent; padding-bottom: 0; }
+  .linea li::before {
+    content: ""; position: absolute; left: -8px; top: .35rem;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--blue); border: 3px solid var(--paper);
+  }
+  .linea li.hito::before { background: var(--red); }
+  .linea .anio {
+    position: absolute; left: -4.2rem; top: .1rem; width: 3.6rem;
+    text-align: right; font-weight: 700; font-variant-numeric: tabular-nums;
+    color: var(--red); font-size: .92rem;
+  }
+  .linea .qq { font-weight: 600; display: block; }
+  .linea .dd { color: var(--muted); font-size: .9rem; }
+  @media (max-width: 560px) {
+    .linea li { margin-left: 0; padding-left: 1.4rem; }
+    .linea .anio { position: static; width: auto; text-align: left; display: block; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="topwrap">
+    <a class="marca kfont" href="index.html">
+      <svg class="taegeuk" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" fill="#C8102E"/>
+        <path d="M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z" fill="#0E4A9E"/>
+      </svg>
+      <span>Wiki de Teoría <span class="rojo">Taekwon-Do ITF</span></span>
+    </a>
+    <div class="top-acciones">
+      <button class="btn ghost menu-btn" id="menu-btn" aria-expanded="false" aria-controls="lateral">☰ Temas</button>
+      <button class="btn ghost" id="tema-btn" aria-pressed="false">🌙 Oscuro</button>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="lateral" id="lateral" aria-label="Menú de temas">
+    <h2>Estudio</h2>
+    <ul>
+      <li><a href="index.html"><span class="ico" aria-hidden="true">🏠</span> Inicio</a></li>
+      <li><a href="escuela.html"><span class="ico" aria-hidden="true">🛡️</span> La escuela</a></li>
+      <li><a href="historia.html"><span class="ico" aria-hidden="true">📜</span> Historia</a></li>
+      <li><a href="filosofia.html"><span class="ico" aria-hidden="true">☯️</span> Filosofía</a></li>
+      <li><a href="secretos.html"><span class="ico" aria-hidden="true">🔑</span> Secretos</a></li>
+      <li><a href="mociones.html"><span class="ico" aria-hidden="true">🌊</span> Mociones</a></li>
+      <li><a href="tules.html"><span class="ico" aria-hidden="true">🥋</span> Tules</a></li>
+      <li><a href="patadas.html"><span class="ico" aria-hidden="true">🦵</span> Patadas</a></li>
+    </ul>
+    <h2>Práctica</h2>
+    <ul>
+      <li><a href="cuestionarios.html"><span class="ico" aria-hidden="true">✏️</span> Cuestionarios</a></li>
+    </ul>
+  </aside>
+
+  <main id="contenido">
+
+    <p class="migas"><a href="index.html">Inicio</a> › Historia</p>
+    <h1 class="titulo kfont">Historia del Taekwon-Do</h1>
+    <p class="bajada">De dónde viene el arte, quién lo creó y cómo llegó a la Argentina. Son los datos con fecha: conviene tener claros el año y el hecho de cada uno.</p>
+
+    <section class="bloque aparece" id="nombre">
+      <h2 class="seccion kfont">¿Qué significa «Taekwon-Do»?</h2>
+      <div class="grilla tres">
+        <div class="ficha"><h4>TAE 태</h4><p>El <strong>pie</strong>: saltar, patear, golpear con el pie.</p></div>
+        <div class="ficha"><h4>KWON 권</h4><p>El <strong>puño</strong> o la mano: golpear o destruir con la mano.</p></div>
+        <div class="ficha"><h4>DO 도</h4><p>El <strong>camino</strong>, el arte, la disciplina, la forma de vida.</p></div>
+      </div>
+      <div class="clave">📖 Traducción habitual: <strong>«el camino del pie y la mano»</strong>. Es un arte marcial <strong>coreano y moderno</strong> (siglo XX), creado con base científica: aplica la física newtoniana al movimiento del cuerpo.</div>
+    </section>
+
+    <section class="bloque aparece" id="fundador">
+      <h2 class="seccion kfont">El fundador: General Choi Hong Hi</h2>
+      <p>El Taekwon-Do no es un arte antiguo: fue <strong>creado y sistematizado por una persona concreta</strong>, el general surcoreano <strong>Choi Hong Hi</strong>. Lo desarrolló combinando el <strong>taek kyon</strong> (arte coreano tradicional de pierna, que aprendió de chico) con el <strong>karate</strong> que estudió durante su estadía en Japón, y lo organizó como un sistema propio con base científica.</p>
+
+      <ul class="linea">
+        <li class="hito">
+          <span class="anio">1918</span>
+          <span class="qq">Nace Choi Hong Hi</span>
+          <span class="dd">El 9 de noviembre, en Corea bajo ocupación japonesa.</span>
+        </li>
+        <li class="hito">
+          <span class="anio">1955</span>
+          <span class="qq">Nace el nombre «Taekwon-Do»</span>
+          <span class="dd">El 11 de abril se adopta oficialmente el nombre para el nuevo arte marcial.</span>
+        </li>
+        <li class="hito">
+          <span class="anio">1966</span>
+          <span class="qq">Se funda la ITF</span>
+          <span class="dd">La Federación Internacional de Taekwon-Do se crea en Seúl, con Choi como presidente.</span>
+        </li>
+        <li>
+          <span class="anio">1967</span>
+          <span class="qq">El Taekwon-Do llega a la Argentina</span>
+          <span class="dd">Con maestros coreanos enviados por Choi: Han Chang Kim, Nam Sung Choi y Kwang Duk Chung.</span>
+        </li>
+        <li class="hito">
+          <span class="anio">1972</span>
+          <span class="qq">La ITF se muda a Canadá</span>
+          <span class="dd">La sede pasa a Toronto; desde allí Choi difunde el arte por todo el mundo.</span>
+        </li>
+        <li>
+          <span class="anio">1983</span>
+          <span class="qq">Se funda Chul Hak San</span>
+          <span class="dd">El maestro Omar Severino funda la escuela en Buenos Aires. <a href="escuela.html">Ver la escuela →</a></span>
+        </li>
+        <li class="hito">
+          <span class="anio">2002</span>
+          <span class="qq">Muere el General Choi</span>
+          <span class="dd">El 15 de junio, dejando el Taekwon-Do difundido en todo el planeta.</span>
+        </li>
+      </ul>
+
+      <div class="clave">🧠 <strong>Las cuatro fechas que sí o sí conviene saber:</strong> <strong>1918</strong> nace Choi · <strong>1955</strong> nace el nombre Taekwon-Do · <strong>1966</strong> se funda la ITF · <strong>2002</strong> muere Choi. Si te preguntan una sola, casi seguro es <strong>1955</strong>.</div>
+    </section>
+
+    <section class="bloque aparece" id="argentina">
+      <h2 class="seccion kfont">El Taekwon-Do en la Argentina</h2>
+      <ul>
+        <li>Llegó en <strong>1967</strong>, de la mano de <strong>maestros coreanos</strong> que respondían al General Choi y a la ITF: <strong>Han Chang Kim</strong>, <strong>Nam Sung Choi</strong> y <strong>Kwang Duk Chung</strong>.</li>
+        <li><strong>FETRA</strong> es la <strong>Federación de Taekwon-Do de la República Argentina</strong>, la federación nacional afiliada a la ITF.</li>
+        <li>Dentro de ese marco nace en <strong>1983</strong> la escuela <strong>Chul Hak San</strong>, que con los años se convirtió en la más numerosa del país.</li>
+      </ul>
+      <div class="alerta">📌 <strong>Ojo con esta fecha:</strong> en los apuntes aparece <strong>1964</strong> como año de llegada a la Argentina, pero las fuentes históricas coinciden en <strong>1967</strong>. Si te lo preguntan, respondé lo que enseñe tu escuela — vale la pena confirmarlo en el dojang.</div>
+    </section>
+
+    <section class="bloque aparece" id="itf">
+      <h2 class="seccion kfont">La ITF y su logo</h2>
+      <figure class="fig">
+        <img src="assets/img/logo-itf.png" alt="Logo de la ITF: un globo terráqueo azul con las líneas de latitud y longitud, un puño amarillo en el centro junto a caracteres coreanos, rodeado por el texto «International Taekwon-Do Federation» en un anillo negro" width="200" loading="lazy">
+        <figcaption>Logo de la Federación Internacional de Taekwon-Do</figcaption>
+      </figure>
+      <p>La <strong>ITF</strong> (International Taekwon-Do Federation) es la federación que sostiene el estilo <strong>tradicional</strong> del General Choi, con sus tules, su teoría y su sistema de grados. Qué representa el logo:</p>
+      <ul>
+        <li>El <strong>mundo</strong>, con los <strong>polos abiertos</strong>: simboliza la apertura del Taekwon-Do a todo el mundo, sin fronteras.</li>
+        <li>Los <strong>colores</strong> representan a los <strong>cinturones</strong> y a los <strong>continentes</strong>.</li>
+        <li>El <strong>puño</strong> en el centro simboliza al Taekwon-Do mismo.</li>
+      </ul>
+    </section>
+
+    <nav class="nav-pares" aria-label="Navegación entre páginas">
+      <a href="escuela.html">← La escuela</a>
+      <a href="filosofia.html">Filosofía y principios →</a>
+    </nav>
+
+  </main>
+</div>
+
+<footer class="pie">
+  <div class="fwrap">Wiki de teoría TKD ITF · <a href="cuestionarios.html">Practicar con los cuestionarios</a></div>
+</footer>
+
+<script src="assets/wiki.js"></script>
+</body>
+</html>
