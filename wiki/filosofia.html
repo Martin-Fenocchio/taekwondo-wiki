@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Filosofía y principios — Wiki de Teoría TKD ITF</title>
-<meta name="description" content="Los 5 principios del Taekwon-Do explicados, el juramento y los símbolos: el dobok y el logo de la ITF.">
+<meta name="description" content="Los 5 principios del Taekwon-Do explicados, el juramento y los símbolos: el dobok, el logo de la ITF y el significado de los cinturones.">
 <link rel="stylesheet" href="assets/estilo.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C8102E'/><path d='M2 50 A48 48 0 0 0 98 50 A24 24 0 0 0 50 50 A24 24 0 0 1 2 50 Z' fill='%230E4A9E'/></svg>">
 <style>
@@ -23,6 +23,13 @@
   .principio h3 { margin: 0 0 .15rem; font-size: 1.05rem; color: var(--red); }
   .principio p { margin: 0; }
   .principio .kor { font-size: .8rem; color: var(--muted); font-weight: 400; }
+  #cinturones .ficha { border-top: 8px solid var(--belt-color); }
+  #cinturones .ficha:first-child { position: relative; }
+  #cinturones .ficha:first-child::before {
+    content: ""; position: absolute; top: -8px; left: -1px; right: -1px;
+    height: 8px; box-sizing: border-box; background: #fff;
+    border: 1px solid #cbd0d6; border-radius: 12px 12px 0 0;
+  }
   .juramento { counter-reset: jur; list-style: none; padding: 0; max-width: 60ch; }
   .juramento li {
     counter-increment: jur; position: relative;
@@ -162,6 +169,37 @@
         <li>Está simbolizado con un <strong>puño</strong>.</li>
       </ul>
       <p>El escudo de nuestra escuela es otro símbolo distinto, con su propio significado: <a href="escuela.html#escudo">ver el escudo de Chul Hak San →</a></p>
+    </section>
+
+    <section class="bloque aparece" id="cinturones">
+      <h2 class="seccion kfont">Significado de los cinturones</h2>
+      <p>Los colores simbolizan el progreso del estudiante en el Taekwon-Do, desde sus primeros pasos hasta la madurez.</p>
+      <div class="grilla tres">
+        <div class="ficha" style="--belt-color:#fff">
+          <h3><span class="dot" style="background:#fff;border:1px solid #777" aria-hidden="true"></span>Blanco — Inocencia</h3>
+          <p>El estudiante principiante aún no tiene conocimientos de Taekwon-Do.</p>
+        </div>
+        <div class="ficha" style="--belt-color:#E8C33C">
+          <h3><span class="dot" style="background:#E8C33C" aria-hidden="true"></span>Amarillo — Tierra</h3>
+          <p>La tierra donde la planta brota y echa raíces, mientras se construyen las bases del Taekwon-Do.</p>
+        </div>
+        <div class="ficha" style="--belt-color:#278447">
+          <h3><span class="dot" style="background:#278447" aria-hidden="true"></span>Verde — Crecimiento</h3>
+          <p>El crecimiento de la planta, a medida que comienzan a desarrollarse las habilidades del estudiante.</p>
+        </div>
+        <div class="ficha" style="--belt-color:#0E4A9E">
+          <h3><span class="dot" style="background:#0E4A9E" aria-hidden="true"></span>Azul — Cielo</h3>
+          <p>El cielo hacia el que crece el árbol, conforme progresa el entrenamiento en Taekwon-Do.</p>
+        </div>
+        <div class="ficha" style="--belt-color:#C8102E">
+          <h3><span class="dot" style="background:#C8102E" aria-hidden="true"></span>Rojo — Peligro</h3>
+          <p>Recuerda al estudiante que debe ejercer control y advierte al oponente que se mantenga alejado.</p>
+        </div>
+        <div class="ficha" style="--belt-color:#111">
+          <h3><span class="dot" style="background:#111;border:1px solid #777" aria-hidden="true"></span>Negro — Madurez</h3>
+          <p>Opuesto al blanco: representa madurez y dominio del Taekwon-Do, y resistencia a la oscuridad y al miedo.</p>
+        </div>
+      </div>
     </section>
 
     <nav class="nav-pares" aria-label="Navegación entre páginas">

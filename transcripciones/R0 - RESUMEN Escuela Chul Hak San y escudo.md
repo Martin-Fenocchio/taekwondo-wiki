@@ -30,9 +30,9 @@
 |---|---|
 | 🟠 **Naranja** | «Signo de **SABIDURÍA**. Es la capacidad de diferenciar el bien del mal; no en relación con el bien y el mal que se aplique a otros, sino al que se refiere a uno mismo.» |
 | 🟡 **Amarillo** | «**ILUMINACIÓN**. Nos referimos a la iluminación en cuanto proyectamos nuestro conocimiento al otro… y estamos abiertos a recibir de nuestros maestros sus enseñanzas.» |
-| 🔴 **Rojo** | «**LA FUERZA**. Es la energía que emana desde el centro de nuestro ser, que genera en el otro el resultado esperado.» |
+| 🔴 **Rojo** | «**LA PASIÓN**. Es la energía que emana desde el centro de nuestro ser, que genera en el otro el resultado esperado.» |
 
-**⚠️ Sobre la duda «¿rojo era algo con P?»:** investigado en profundidad (2/8/2026). Ninguna fuente de la escuela usa «poder» ni otra palabra con P para el rojo del **escudo**: la cita textual es «la fuerza». La palabra con P que probablemente recuerdes viene del **simbolismo de los cinturones ITF**, que es otro tema: ahí el **rojo = peligro** (y el blanco = **pureza**). Son dos simbolismos distintos y ambos pueden entrar en el examen:
+**Sobre los colores:** el rojo del **escudo** representa la **pasión**. En el **simbolismo de los cinturones ITF**, el rojo representa **peligro** (y el blanco, **pureza**). Son dos simbolismos distintos:
 
 | Cinturón | Significa |
 |---|---|

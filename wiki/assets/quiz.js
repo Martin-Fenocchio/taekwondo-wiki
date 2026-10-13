@@ -14,8 +14,8 @@
         { q: '¿Quién fundó la escuela y en qué año?',
           opts: ['Gral. Choi, 1966', 'Enrique Eiriz, 1972', 'Omar Severino, 1983', 'Pablo Trajtenberg, 1988'], a: 2 },
         { q: 'En el escudo, el color naranja representa…',
-          opts: ['La fuerza', 'La iluminación', 'La sabiduría', 'La perseverancia'], a: 2, hash: '#escudo' },
-        { q: '¿Qué color del escudo representa la fuerza, «la energía que emana del centro de nuestro ser»?',
+          opts: ['La pasión', 'La iluminación', 'La sabiduría', 'La perseverancia'], a: 2, hash: '#escudo' },
+        { q: '¿Qué color del escudo representa la pasión, «la energía que emana del centro de nuestro ser»?',
           opts: ['Rojo', 'Amarillo', 'Naranja', 'Azul'], a: 0, hash: '#escudo' },
         { q: '¿Cuáles son los 3 pilares de la escuela?',
           opts: ['Fuerza, velocidad y técnica', 'Ser la más grande, ser la mejor y ayudar a todos los que podamos', 'Cortesía, integridad y perseverancia', 'Enseñar, competir y trascender'], a: 1 }
